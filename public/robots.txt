@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /#/dashboard
+Disallow: /#/lms
+Disallow: /#/admin
+Disallow: /#/stripe-success
+Disallow: /api/
+
+Sitemap: https://fcei.eu/sitemap.xml
