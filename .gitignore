@@ -1,0 +1,21 @@
+# Environment and secrets
+.env
+
+# Runtime data
+data/db.json
+storage/
+
+# Backups
+*.backup-*
+*.bak
+*.bak.*
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PM2
+ecosystem.config.js
