@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const prisma = new PrismaClient();
 
 const identities = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'fcei_sender_identities_v1.json'), 'utf8'));
-const triggers = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'fcei_email_trigger_templates_v1.json'), 'utf8'));
+const triggers = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'fcei_email_trigger_templates_v2.json'), 'utf8'));
 
 async function main() {
   for (const id of identities.identities) {

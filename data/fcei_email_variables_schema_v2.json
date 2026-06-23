@@ -1,0 +1,44 @@
+{
+  "variables": [
+    "addon_title",
+    "admin_first_name",
+    "consultancy_area",
+    "contact_first_name",
+    "course_title",
+    "email_preferences_url",
+    "institution_name",
+    "learner_first_name",
+    "meeting_date",
+    "meeting_time",
+    "meeting_url",
+    "module_title",
+    "payment_amount",
+    "payment_date",
+    "product_title",
+    "receipt_number",
+    "reviewer_note",
+    "seat_count",
+    "ticket_number",
+    "ticket_subject"
+  ],
+  "fallbacks": {
+    "learner_first_name": "there",
+    "contact_first_name": "there",
+    "course_title": "your FCEI course",
+    "module_title": "your FCEI module"
+  },
+  "required_global": [
+    "email_preferences_url",
+    "privacy_policy_url",
+    "support_faq_url"
+  ],
+  "version": "v2",
+  "brand_variables": {
+    "brand_logo_url": "https://www.fcei.eu/assets/fcei-bridge-icon-512.png",
+    "brand_name": "Finland Creative Education Institute (FCEI)",
+    "brand_platform_description": "Digital professional learning platform",
+    "brand_strapline": "Finnish-inspired • EDUFI-aligned • FINEEC-benchmarked",
+    "brand_contact_email": "hello@fcei.eu",
+    "brand_website": "www.fcei.eu"
+  }
+}

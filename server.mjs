@@ -118,7 +118,7 @@ async function sendTriggeredEmail(triggerName, recipientEmail, variables) {
     const sender = await getSender(tmpl.senderKey);
     if (!sender || !sender.isActive) { console.log('Email trigger skipped (no sender):', tmpl.senderKey); return false; }
 
-    const vars = { ...variables, email_preferences_url: SITE_URL + '#/settings', privacy_policy_url: SITE_URL + '#/privacy', support_faq_url: SITE_URL + '#/support' };
+    const vars = { brand_logo_url: SITE_URL.replace(/#.*$/, '') + '/assets/fcei-bridge-icon-512.png', brand_name: 'Finland Creative Education Institute (FCEI)', brand_platform_description: 'Digital professional learning platform', brand_strapline: 'Finnish-inspired • EDUFI-aligned • FINEEC-benchmarked', brand_contact_email: 'hello@fcei.eu', brand_website: 'www.fcei.eu', email_preferences_url: SITE_URL + '#/settings', privacy_policy_url: SITE_URL + '#/privacy', support_faq_url: SITE_URL + '#/support', ...variables };
     const subject = renderVars(tmpl.subject, vars);
     let htmlBody = loadTemplateFile(tmpl.templateId, 'html') || tmpl.bodyHtml;
     if (htmlBody) htmlBody = renderVars(htmlBody, vars);

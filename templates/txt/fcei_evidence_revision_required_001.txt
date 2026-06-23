@@ -12,8 +12,12 @@ Warm regards,
 The FCEI Team
 Finland Creative Education Institute
 
-FCEI Finnish Teacher Training Development Framework
-
-Manage your email preferences: {{email_preferences_url}}
-
 Revise Submission: {{submission_url}}
+
+---
+Finland Creative Education Institute (FCEI)
+Digital professional learning platform
+Finnish-inspired • EDUFI-aligned • FINEEC-benchmarked
+Email: hello@fcei.eu
+Website: www.fcei.eu
+Manage your email preferences: {{email_preferences_url}}

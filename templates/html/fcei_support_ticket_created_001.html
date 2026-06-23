@@ -1,1 +1,69 @@
-<!doctype html><html><head><meta charset="utf-8"><title>We Have Received Your FCEI Support Request</title></head><body style="margin:0;background:#f6f8f7;padding:24px"><div style="max-width:680px;margin:auto;background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden"><div style="background:#111827;color:#ffffff;padding:22px 26px"><h1 style="margin:0;font:700 22px Arial,Helvetica,sans-serif">FCEI Support</h1><p style="margin:8px 0 0;color:#d1d5db;font:14px Arial,Helvetica,sans-serif">Your support request has been recorded.</p></div><div style="padding:26px;font-family: Arial, Helvetica, sans-serif; color:#111827; line-height:1.6;"><p>Hello {{learner_first_name}},</p><p>Thank you for contacting FCEI Support.</p><p>We have received your support request.</p><p><strong>Ticket number:</strong> {{ticket_number}}<br><strong>Subject:</strong> {{ticket_subject}}</p><p>The FCEI Support Team will review your request and respond as soon as possible.</p><p>Warm regards,<br><strong>The FCEI Team</strong><br><strong>Finland Creative Education Institute</strong></p><p>FCEI Finnish Teacher Training Development Framework</p><p>Manage your email preferences: {{email_preferences_url}}</p></div></div></body></html>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We Have Received Your FCEI Support Request</title>
+</head>
+<body style="margin:0;background:#f6f8f7;padding:24px;font-family:Arial,Helvetica,sans-serif;color:#111827">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent">Your support request has been recorded.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;background:#f6f8f7">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="680" cellspacing="0" cellpadding="0" style="max-width:680px;width:100%;border-collapse:collapse;background:#ffffff;border:1px solid #e5e7eb;border-radius:18px;overflow:hidden">
+          <tr>
+            <td style="background:#153D4F;color:#ffffff;padding:22px 26px">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+                <tr>
+                  <td style="width:72px;vertical-align:middle">
+                    <img src="{{brand_logo_url}}" width="56" height="56" alt="FCEI logo" style="display:block;border:0;border-radius:14px;background:#153D4F">
+                  </td>
+                  <td style="vertical-align:middle">
+                    <h1 style="margin:0;font-size:22px;line-height:1.2;font-weight:700;color:#ffffff">FCEI Support</h1>
+                    <p style="margin:7px 0 0;color:#dff7ec;font-size:14px;line-height:1.4">Your support request has been recorded.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:28px 28px 18px;font-size:15px;line-height:1.62;color:#111827">
+              <p style="margin:0 0 14px">Hello {{learner_first_name}},</p>
+<p style="margin:0 0 14px">Thank you for contacting FCEI Support.</p>
+<p style="margin:0 0 14px">We have received your support request.</p>
+<p style="margin:0 0 14px"><strong>Ticket number:</strong> {{ticket_number}}</p>
+<p style="margin:0 0 14px"><strong>Subject:</strong> {{ticket_subject}}</p>
+<p style="margin:0 0 14px">The FCEI Support Team will review your request and respond as soon as possible.</p>
+<p style="margin:0 0 14px">Warm regards,</p>
+<p style="margin:0 0 14px"><strong>The FCEI Team</strong></p>
+<p style="margin:0 0 14px"><strong>Finland Creative Education Institute</strong></p>
+              
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 28px 28px">
+              <div style="border-top:1px solid #e5e7eb;padding-top:18px;color:#415260;font-size:13px;line-height:1.55">
+                <table role="presentation" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+                  <tr>
+                    <td style="width:54px;vertical-align:top;padding-right:12px">
+                      <img src="{{brand_logo_url}}" width="42" height="42" alt="FCEI logo" style="display:block;border-radius:10px;border:0;background:#153D4F">
+                    </td>
+                    <td style="vertical-align:top">
+                      <strong style="color:#153D4F">Finland Creative Education Institute (FCEI)</strong><br>
+                      Digital professional learning platform<br>
+                      Finnish-inspired • EDUFI-aligned • FINEEC-benchmarked<br>
+                      Email: <a href="mailto:hello@fcei.eu" style="color:#153D4F">hello@fcei.eu</a><br>
+                      Website: <a href="https://www.fcei.eu" style="color:#153D4F">www.fcei.eu</a>
+                    </td>
+                  </tr>
+                </table>
+                <p style="margin:16px 0 0;font-size:12px;color:#6b7280">Manage your email preferences: <a href="{{email_preferences_url}}" style="color:#153D4F">{{email_preferences_url}}</a></p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
