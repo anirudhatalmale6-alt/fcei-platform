@@ -1971,10 +1971,21 @@ window.__FCEI__ = {
       var c = s.content.consultancy || {};
       var head = sectionHead('For institutions', c.title || 'Consultancy and Workshop Services',
         c.intro || '', 'Home', 'Consultancy');
+      var videoSection = '<section class="section" style="padding-top:0;padding-bottom:0"><div class="container" style="max-width:860px">' +
+        '<div style="text-align:center;margin-bottom:18px"><span class="eyebrow">Introducing our services</span>' +
+        '<h2 style="margin:10px 0 6px">See how FCEI consultancy works</h2>' +
+        '<p class="muted" style="font-size:.94rem">A short overview of the FCEI service model, consultancy approach and how we support institutions.</p></div>' +
+        '<div style="padding:56.25% 0 0 0;position:relative;border-radius:18px;overflow:hidden;background:#0f2a38;box-shadow:0 12px 40px rgba(0,0,0,.12)">' +
+        '<iframe src="https://player.vimeo.com/video/1203648808?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" ' +
+        'frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" ' +
+        'referrerpolicy="strict-origin-when-cross-origin" ' +
+        'style="position:absolute;top:0;left:0;width:100%;height:100%" ' +
+        'title="FCEI Consultancy Services"></iframe></div>' +
+        '</div></section>';
       var grid = '<section class="section" style="padding-top:0"><div class="container">' +
         '<div class="cards">' + (s.services || []).map(serviceCard).join('') + '</div>' +
       '</div></section>';
-      mount(head + grid + renderAnswerBlock('consultancy') + ctaBand());
+      mount(head + videoSection + grid + renderAnswerBlock('consultancy') + ctaBand());
     });
   }
 
@@ -2249,8 +2260,23 @@ window.__FCEI__ = {
   }
   function submitBooking() {
     var msg = $('#booking-msg');
-    if (msg) msg.innerHTML = '<div class="notice ok" style="margin-top:14px"><span class="ni">' + svg('check') + '</span><div>Thank you — your demo request has been noted. The team will follow up by email.</div></div>';
-    toast('Booking request sent ✓');
+    var form = document.querySelector('.form-col');
+    if (!form) return;
+    var inputs = form.querySelectorAll('input, textarea, select');
+    var data = {};
+    var labels = ['name','email','organisation','date','message','audience'];
+    inputs.forEach(function(el, i) { data[labels[i] || 'field'+i] = el.value || ''; });
+    if (!data.name || !data.email) { toast('Please fill in your name and email'); return; }
+    if (msg) msg.innerHTML = '<div class="notice info" style="margin-top:14px"><span class="ni">i</span><div>Sending your request...</div></div>';
+    api('/api/bookings', { method: 'POST', body: data }).then(function(r) {
+      if (r.data && r.data.booking) {
+        if (msg) msg.innerHTML = '<div class="notice ok" style="margin-top:14px"><span class="ni">' + svg('check') + '</span><div>Thank you \u2014 your demo request has been received. The team will follow up by email shortly.</div></div>';
+        toast('Booking request sent \u2713');
+        inputs.forEach(function(el) { el.value = ''; });
+      } else {
+        if (msg) msg.innerHTML = '<div class="notice warn" style="margin-top:14px"><span class="ni">!</span><div>Something went wrong. Please try again or email enquiries@fcei.eu directly.</div></div>';
+      }
+    });
   }
 
   /* palette */

@@ -3,6 +3,7 @@ import https from 'node:https';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import net from 'node:net';
 import { fileURLToPath } from 'node:url';
 import { PrismaClient } from '@prisma/client';
 
@@ -13,6 +14,73 @@ const SEED_PATH = path.join(__dirname, 'data', 'seed.json');
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const UPLOAD_DIR = path.join(__dirname, 'storage', 'uploads');
 const CERT_DIR = path.join(__dirname, 'storage', 'certificates');
+const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || 'enquiries@fcei.eu';
+const FROM_EMAIL = process.env.FROM_EMAIL || 'platform@fcei.eu';
+
+function sendMail(to, subject, htmlBody) {
+  return new Promise((resolve) => {
+    const msg = [
+      'From: FCEI Platform <' + FROM_EMAIL + '>',
+      'To: ' + to,
+      'Subject: ' + subject,
+      'MIME-Version: 1.0',
+      'Content-Type: text/html; charset=utf-8',
+      'Date: ' + new Date().toUTCString(),
+      '',
+      htmlBody
+    ].join('\r\n');
+    const cmds = [
+      'EHLO fcei.eu',
+      'MAIL FROM:<' + FROM_EMAIL + '>',
+      'RCPT TO:<' + to + '>',
+      'DATA'
+    ];
+    let step = 0;
+    let buf = '';
+    const sock = net.createConnection(25, '127.0.0.1');
+    sock.setEncoding('utf8');
+    sock.setTimeout(15000);
+    sock.on('data', (chunk) => {
+      buf += chunk;
+      const lines = buf.split('\r\n');
+      buf = lines.pop();
+      for (const line of lines) {
+        if (!line) continue;
+        const code = parseInt(line.substring(0, 3), 10);
+        if (code >= 400) { console.error('SMTP error:', line); sock.end('QUIT\r\n'); resolve(false); return; }
+        if (step < cmds.length) {
+          sock.write(cmds[step++] + '\r\n');
+        } else if (step === cmds.length) {
+          sock.write(msg + '\r\n.\r\n');
+          step++;
+        } else {
+          sock.end('QUIT\r\n');
+        }
+      }
+    });
+    sock.on('end', () => resolve(true));
+    sock.on('error', (e) => { console.error('Mail error:', e.message); resolve(false); });
+    sock.on('timeout', () => { sock.destroy(); resolve(false); });
+  });
+}
+
+function bookingNotifyHtml(b) {
+  return '<div style="font-family:sans-serif;max-width:600px;margin:0 auto">' +
+    '<div style="background:#0f2a38;color:#fff;padding:24px 28px;border-radius:12px 12px 0 0">' +
+    '<h2 style="margin:0;font-size:20px">New Enquiry / Booking Request</h2></div>' +
+    '<div style="border:1px solid #e5e5e5;border-top:none;padding:24px 28px;border-radius:0 0 12px 12px">' +
+    '<table style="width:100%;border-collapse:collapse;font-size:15px">' +
+    '<tr><td style="padding:8px 0;color:#666;width:140px">Name</td><td style="padding:8px 0;font-weight:600">' + (b.name||'') + '</td></tr>' +
+    '<tr><td style="padding:8px 0;color:#666">Email</td><td style="padding:8px 0"><a href="mailto:' + (b.email||'') + '">' + (b.email||'') + '</a></td></tr>' +
+    '<tr><td style="padding:8px 0;color:#666">Organisation</td><td style="padding:8px 0">' + (b.organisation||b.service||'-') + '</td></tr>' +
+    '<tr><td style="padding:8px 0;color:#666">Preferred date</td><td style="padding:8px 0">' + (b.date||'-') + '</td></tr>' +
+    '<tr><td style="padding:8px 0;color:#666">Audience</td><td style="padding:8px 0">' + (b.audience||'-') + '</td></tr>' +
+    '<tr><td style="padding:8px 0;color:#666;vertical-align:top">Message</td><td style="padding:8px 0">' + (b.message||b.notes||'-') + '</td></tr>' +
+    '</table>' +
+    '<hr style="margin:20px 0;border:none;border-top:1px solid #eee">' +
+    '<p style="font-size:13px;color:#999;margin:0">Sent from the FCEI platform booking form</p>' +
+    '</div></div>';
+}
 const SCORM_DIR = path.join(__dirname, 'scorm');
 for (const d of [UPLOAD_DIR,CERT_DIR]) fs.mkdirSync(d,{recursive:true});
 const STRIPE_KEY = process.env.STRIPE_SECRET_KEY || process.env.STRIPE_RESTRICTED_KEY || '';
@@ -467,7 +535,8 @@ async function api(req,res,pathname,query){
     if(req.method==='POST' && pathname==='/api/bookings'){
       const b=jsonParse(await body(req));
       if(!b.name||!b.email) return bad(res,'Name and email are required');
-      const rec=await prisma.booking.create({data:{id:uid('BOOK'),name:sanitize(b.name),email:b.email,service:sanitize(b.service||''),notes:sanitize(b.message||b.notes||''),createdAt:new Date(),status:'NEW'}});
+      const rec=await prisma.booking.create({data:{id:uid('BOOK'),name:sanitize(b.name),email:b.email,service:sanitize(b.organisation||b.service||''),notes:sanitize(b.message||b.notes||''),createdAt:new Date(),status:'NEW'}});
+      sendMail(NOTIFY_EMAIL, 'New FCEI Enquiry from ' + sanitize(b.name), bookingNotifyHtml(b)).catch(()=>{});
       return sendJson(res,200,{booking:rec});
     }
 
