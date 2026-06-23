@@ -352,7 +352,7 @@
       "id": "C10",
       "code": "C10",
       "title": "School Leadership, Quality Culture and Enhancement-Led Development",
-      "description": "Leadership, Quality Culture and Institutional Self-Evaluation is part of the FCEI Finnish Teacher Training Development Framework. The course translates Finnish-inspired principles into local, evidence-informed practice through 6 modules. EDUFI alignment emphasises equity, participation, wellbeing, support, meaningful learning and local curriculum adaptation. FINEEC benchmarking emphasises enhancement-led self-evaluation, quality culture, trust and evidence-based improvement. Participants complete practical tasks, upload evidence and produce reusable professional artefacts for their classroom, team, institution, TVET context or consultancy setting.",
+      "description": "This module introduces school leadership, quality culture and enhancement-led development as practical leadership responsibilities within the FCEI Finnish Teacher Training Development Framework. Participants learn how leaders can build trust, shared responsibility, professional dialogue, evidence-informed improvement and learner-centred decision-making across a school, college or education team.",
       "duration": "6 modules",
       "level": "Leadership",
       "audience": "Teachers, educators, leaders and implementation teams",
@@ -10182,28 +10182,44 @@
       ],
       "keyTerms": [
         {
-          "term": "enhancement-led evaluation",
-          "definition": "define this in relation to the participant's local practice and evidence."
+          "term": "School leadership",
+          "definition": "The process of guiding teaching, learning, staff development, school culture and institutional improvement through clear direction, professional support and responsible decision-making."
         },
         {
-          "term": "self-assessment",
-          "definition": "define this in relation to the participant's local practice and evidence."
+          "term": "Quality culture",
+          "definition": "A shared institutional habit where staff review practice, use evidence, discuss improvement and take responsibility for better learning conditions."
         },
         {
-          "term": "quality culture",
-          "definition": "define this in relation to the participant's local practice and evidence."
+          "term": "Enhancement-led development",
+          "definition": "An improvement approach focused on trust, participation, strengths, evidence, reflection, appreciation and sustainable development."
         },
         {
-          "term": "evidence walk",
-          "definition": "define this in relation to the participant's local practice and evidence."
+          "term": "Self-evaluation",
+          "definition": "A school or institution’s structured review of its own practice using evidence, staff reflection, learner voice and improvement priorities."
         },
         {
-          "term": "professional dialogue",
-          "definition": "define this in relation to the participant's local practice and evidence."
+          "term": "Evidence-informed leadership",
+          "definition": "Leadership decisions based on fair evidence, professional judgement and careful interpretation rather than assumption or blame."
         },
         {
-          "term": "review date",
-          "definition": "define this in relation to the participant's local practice and evidence."
+          "term": "Professional trust",
+          "definition": "A leadership culture where teachers are respected as professionals and supported to improve through dialogue, evidence and shared responsibility."
+        },
+        {
+          "term": "Improvement cycle",
+          "definition": "A repeated process of identifying a priority, planning action, collecting evidence, reflecting and deciding the next step."
+        },
+        {
+          "term": "Learner voice",
+          "definition": "Structured ways for learners to contribute information about their learning experience, participation, support, challenge and wellbeing."
+        },
+        {
+          "term": "Stakeholder engagement",
+          "definition": "Involving relevant people such as staff, learners, parents, governors, employers or partners in improvement decisions where appropriate."
+        },
+        {
+          "term": "Quality management",
+          "definition": "The system by which the provider maintains, reviews and improves the quality of teaching, learning, support and institutional routines."
         }
       ],
       "objectives": [
@@ -10222,78 +10238,228 @@
       ],
       "resources": [
         {
-          "id": "RES-C10-M01-01",
-          "type": "concept_brief",
-          "title": "C10.1 Enhancement-Led Evaluation and Quality Culture - Concept Brief and Finnish Anchor",
-          "fileUrl": "/api/resources/RES-C10-M01-01/download"
+          "id": "C10-M01-T01",
+          "title": "Leadership Quality Culture Self-Review",
+          "description": "Review leadership routines, trust, participation, evidence use and improvement culture.",
+          "type": "template",
+          "downloadUrl": "/downloads/c10/C10-M01-T01_leadership-quality-culture-self-review.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-T01_leadership-quality-culture-self-review.docx",
+          "format": "PDF + DOCX"
         },
         {
-          "id": "RES-C10-M01-02",
-          "type": "scenario_worksheet",
-          "title": "C10.1 Enhancement-Led Evaluation and Quality Culture - Scenario Diagnosis Worksheet",
-          "fileUrl": "/api/resources/RES-C10-M01-02/download"
+          "id": "C10-M01-T02",
+          "title": "School Improvement Priority Map",
+          "description": "Identify one priority and map it against evidence, stakeholders, action and timeline.",
+          "type": "template",
+          "downloadUrl": "/downloads/c10/C10-M01-T02_school-improvement-priority-map.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-T02_school-improvement-priority-map.docx",
+          "format": "PDF + DOCX"
         },
         {
-          "id": "RES-C10-M01-03",
-          "type": "one_change_planner",
-          "title": "C10.1 Enhancement-Led Evaluation and Quality Culture - Quality Culture Evidence Walk Template",
-          "fileUrl": "/api/resources/RES-C10-M01-03/download"
+          "id": "C10-M01-T03",
+          "title": "Evidence-Informed Leadership Decision Sheet",
+          "description": "Record the evidence behind a leadership decision and the next improvement step.",
+          "type": "template",
+          "downloadUrl": "/downloads/c10/C10-M01-T03_evidence-informed-leadership-decision-sheet.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-T03_evidence-informed-leadership-decision-sheet.docx",
+          "format": "PDF + DOCX"
         },
         {
-          "id": "RES-C10-M01-04",
-          "type": "evidence_template",
-          "title": "C10.1 Enhancement-Led Evaluation and Quality Culture - Evidence Upload Template: evidence walk summary + improvement action + owner + review date",
-          "fileUrl": "/api/resources/RES-C10-M01-04/download"
+          "id": "C10-M01-T04",
+          "title": "Staff Voice and Professional Dialogue Template",
+          "description": "Structure staff input around strengths, concerns, opportunities and practical next steps.",
+          "type": "template",
+          "downloadUrl": "/downloads/c10/C10-M01-T04_staff-voice-and-professional-dialogue-template.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-T04_staff-voice-and-professional-dialogue-template.docx",
+          "format": "PDF + DOCX"
         },
         {
-          "id": "RES-C10-M01-05",
-          "type": "transferability_filter",
-          "title": "C10.1 Enhancement-Led Evaluation and Quality Culture - Transferability Filter Reflection Sheet",
-          "fileUrl": "/api/resources/RES-C10-M01-05/download"
+          "id": "C10-M01-T05",
+          "title": "Learner Experience Review Form",
+          "description": "Gather learner evidence about participation, support, challenge, wellbeing and feedback.",
+          "type": "template",
+          "downloadUrl": "/downloads/c10/C10-M01-T05_learner-experience-review-form.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-T05_learner-experience-review-form.docx",
+          "format": "PDF + DOCX"
         },
         {
-          "id": "RES-C10-M01-06",
-          "type": "portfolio_checklist",
-          "title": "C10.1 Enhancement-Led Evaluation and Quality Culture - Portfolio Checklist and Completion Rubric",
-          "fileUrl": "/api/resources/RES-C10-M01-06/download"
+          "id": "C10-M01-T06",
+          "title": "Enhancement-Led Development Action Plan",
+          "description": "Plan a manageable action that links priority, evidence, participation, timeline and review.",
+          "type": "template",
+          "downloadUrl": "/downloads/c10/C10-M01-T06_enhancement-led-development-action-plan.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-T06_enhancement-led-development-action-plan.docx",
+          "format": "PDF + DOCX"
+        },
+        {
+          "id": "C10-M01-T07",
+          "title": "Leadership Reflection and Improvement Log",
+          "description": "Record what changed, what was learned and what should happen next.",
+          "type": "template",
+          "downloadUrl": "/downloads/c10/C10-M01-T07_leadership-reflection-and-improvement-log.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-T07_leadership-reflection-and-improvement-log.docx",
+          "format": "PDF + DOCX"
+        },
+        {
+          "id": "C10-M01-T08",
+          "title": "Certificate Evidence Checklist",
+          "description": "Confirm the artefacts required for module completion and certificate evidence.",
+          "type": "template",
+          "downloadUrl": "/downloads/c10/C10-M01-T08_certificate-evidence-checklist.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-T08_certificate-evidence-checklist.docx",
+          "format": "PDF + DOCX"
+        },
+        {
+          "id": "C10-M01-P01",
+          "title": "Advanced Leadership Quality Culture Audit",
+          "description": "A deeper audit for whole-school or college leadership review.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P01_advanced-leadership-quality-culture-audit.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P01_advanced-leadership-quality-culture-audit.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
+        },
+        {
+          "id": "C10-M01-P02",
+          "title": "Whole-School Evidence Walk Template",
+          "description": "A structured tool for leadership teams to observe evidence of quality culture without blame.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P02_whole-school-evidence-walk-template.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P02_whole-school-evidence-walk-template.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
+        },
+        {
+          "id": "C10-M01-P03",
+          "title": "Senior Leadership Team Reflection Pack",
+          "description": "A meeting pack for leaders to analyse evidence and agree next steps.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P03_senior-leadership-team-reflection-pack.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P03_senior-leadership-team-reflection-pack.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
+        },
+        {
+          "id": "C10-M01-P04",
+          "title": "Staff Professional Dialogue Facilitation Guide",
+          "description": "Facilitator guidance for trust-based professional discussion.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P04_staff-professional-dialogue-facilitation-guide.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P04_staff-professional-dialogue-facilitation-guide.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
+        },
+        {
+          "id": "C10-M01-P05",
+          "title": "Learner Voice Review Pack",
+          "description": "A package for gathering learner feedback and translating it into improvement decisions.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P05_learner-voice-review-pack.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P05_learner-voice-review-pack.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
+        },
+        {
+          "id": "C10-M01-P06",
+          "title": "90-Day School Improvement Sprint Planner",
+          "description": "A 90-day implementation plan with milestones, owners and evidence checkpoints.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P06_90-day-school-improvement-sprint-planner.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P06_90-day-school-improvement-sprint-planner.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
+        },
+        {
+          "id": "C10-M01-P07",
+          "title": "Leadership Meeting Agenda Templates",
+          "description": "Ready agenda templates for quality culture and improvement meetings.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P07_leadership-meeting-agenda-templates.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P07_leadership-meeting-agenda-templates.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
+        },
+        {
+          "id": "C10-M01-P08",
+          "title": "Quality Culture Reporting Template",
+          "description": "A report template for communicating strengths, development areas and actions.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P08_quality-culture-reporting-template.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P08_quality-culture-reporting-template.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
+        },
+        {
+          "id": "C10-M01-P09",
+          "title": "Parent and Stakeholder Communication Template",
+          "description": "A template for sharing improvement work with families or external stakeholders.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P09_parent-and-stakeholder-communication-template.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P09_parent-and-stakeholder-communication-template.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
+        },
+        {
+          "id": "C10-M01-P10",
+          "title": "Model Completed School Improvement Report",
+          "description": "A model report showing how to connect priority, evidence, action and impact.",
+          "type": "toolkit",
+          "downloadUrl": "/downloads/c10/C10-M01-P10_model-completed-school-improvement-report.pdf",
+          "editableUrl": "/downloads/c10/C10-M01-P10_model-completed-school-improvement-report.docx",
+          "format": "PDF + DOCX",
+          "requiresToolkit": true
         }
       ],
       "quiz": [
         {
-          "id": "C10-M01-Q1",
-          "question": "What is the most responsible first move when applying Enhancement-Led Evaluation and Quality Culture in a new local context?",
+          "question": "What is the main purpose of enhancement-led development?",
           "options": [
-            "Copy the Finnish practice exactly without change.",
-            "Test one manageable action, collect evidence and adapt before scaling.",
-            "Launch a whole-school reform immediately.",
-            "Wait until every condition is perfect before trying anything."
+            "To rank teachers publicly",
+            "To support improvement through participation, trust, evidence, reflection and practical action",
+            "To replace local curriculum decisions",
+            "To remove the need for evidence"
           ],
-          "correctIndex": 1,
-          "rationale": "The best answer protects learners and staff through a bounded evidence-first trial."
+          "correctIndex": 1
         },
         {
-          "id": "C10-M01-Q2",
-          "question": "Which evidence best proves that Enhancement-Led Evaluation and Quality Culture changed practice?",
+          "question": "What is quality culture?",
           "options": [
-            "Attendance or page views only.",
-            "The required artefact is completed and linked to a reflection: evidence walk summary + improvement action + owner + review date.",
-            "A general statement that participants enjoyed the topic.",
-            "A certificate issued before evidence is uploaded."
+            "A set of posters about school values",
+            "A shared institutional habit of reviewing practice, using evidence and improving learning conditions",
+            "A single annual inspection event",
+            "A finance-only reporting system"
           ],
-          "correctIndex": 1,
-          "rationale": "FCEI completion must show implementation, evidence and reflection, not participation only."
+          "correctIndex": 1
         },
         {
-          "id": "C10-M01-Q3",
-          "question": "What should be avoided when implementing Enhancement-Led Evaluation and Quality Culture?",
+          "question": "What should leaders avoid when using evidence?",
           "options": [
-            "Using evaluation for blame, inspection preparation or compliance theatre.",
-            "Using local evidence before scaling.",
-            "Keeping the same learning aim while adapting access or process.",
-            "Writing the change into a local plan or routine."
+            "Using evidence to support reflection",
+            "Using evidence to identify strengths",
+            "Using evidence to blame individuals without context, support or professional dialogue",
+            "Using evidence to decide next steps"
           ],
-          "correctIndex": 0,
-          "rationale": "This distractor is the exact misconception the module is designed to correct."
+          "correctIndex": 2
+        },
+        {
+          "question": "Which phrase best fits FINEEC-benchmarked improvement?",
+          "options": [
+            "Trust, participation, learning and impact",
+            "Punishment, ranking and fear",
+            "Inspection only",
+            "Results without context"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "question": "What should a certificate evidence artefact show?",
+          "options": [
+            "Only attendance",
+            "Priority, evidence, action, reflection and improvement decision",
+            "Only a written opinion",
+            "Only a score"
+          ],
+          "correctIndex": 1
         }
       ],
       "video": {
@@ -10323,7 +10489,13 @@
         "transferabilitySubmitted": true,
         "checklistCompleted": true
       },
-      "shortExplanation": "EDUFI/FINEEC framing: This FCEI module turns Quality Culture and Trust into a practical, evidence-led task within the Finnish Teacher Training Development Framework. EDUFI alignment: local curriculum adaptation, equality, learner participation and support. FINEEC benchmarking: enhancement-led evaluation, self-assessment and quality management. In FCEI practice, the participant is not only reading a course page; they are building a reusable professional artefact. The module defines the principle, names the real leadership or institutional problem without blame, applies Quality Culture Audit, collects evidence such as self-evaluation note, evidence meeting record, 90-day improvement plan, completed task sheet, template output, reflection or demonstration record, and uses the improvement cycle to decide the next step. Final deliverable: a completed Quality Culture and Trust implementation pack containing a problem statement, practical tool selection, implementation steps, evidence record, reflection and improvement decision."
+      "shortExplanation": "EDUFI/FINEEC framing: This FCEI module turns Quality Culture and Trust into a practical, evidence-led task within the Finnish Teacher Training Development Framework. EDUFI alignment: local curriculum adaptation, equality, learner participation and support. FINEEC benchmarking: enhancement-led evaluation, self-assessment and quality management. In FCEI practice, the participant is not only reading a course page; they are building a reusable professional artefact. The module defines the principle, names the real leadership or institutional problem without blame, applies Quality Culture Audit, collects evidence such as self-evaluation note, evidence meeting record, 90-day improvement plan, completed task sheet, template output, reflection or demonstration record, and uses the improvement cycle to decide the next step. Final deliverable: a completed Quality Culture and Trust implementation pack containing a problem statement, practical tool selection, implementation steps, evidence record, reflection and improvement decision.",
+      "description": "This module introduces school leadership, quality culture and enhancement-led development as practical leadership responsibilities within the FCEI Finnish Teacher Training Development Framework. Participants learn how leaders can build trust, shared responsibility, professional dialogue, evidence-informed improvement and learner-centred decision-making across a school, college or education team.",
+      "learnerPhrasing": "In this module, you will explore how school leadership can strengthen quality culture and support enhancement-led development. You will learn how to identify a leadership priority, use evidence responsibly, involve staff or learners, plan an improvement action and produce a practical leadership artefact for your professional evidence portfolio.",
+      "evidenceRequirement": "Participants must submit one leadership improvement artefact showing priority, evidence, leadership action, staff or learner participation, reflection and improvement decision. The evidence must show the link: priority → evidence → leadership action → reflection → improvement decision.",
+      "reflectionPrompt": "What leadership priority did you identify? What evidence helped you understand the issue? How did the process support trust, participation or professional dialogue? What did you learn about your institution’s quality culture? What is the next improvement step?",
+      "certificateRule": "The module is complete when the participant opens the content, watches or opens the learning video, downloads at least one core template, completes the knowledge check, submits the action task, uploads a leadership improvement artefact and completes the reflection prompt.",
+      "certificateStatement": "The participant has completed School Leadership, Quality Culture and Enhancement-Led Development within the FCEI Finnish Teacher Training Development Framework and has submitted evidence of leadership reflection, quality culture review and enhancement-led improvement planning."
     },
     {
       "id": "C10-M02",
