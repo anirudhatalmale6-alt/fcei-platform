@@ -1,0 +1,15 @@
+Hello {{learner_first_name}},
+
+Thank you for completing {{course_title}}.
+
+We would appreciate your feedback on your FCEI learning experience. Your review helps us improve the learning platform, module content, downloadable resources and evidence tasks for educators and institutions worldwide.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Leave Feedback: {{feedback_url}}

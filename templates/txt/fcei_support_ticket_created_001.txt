@@ -1,0 +1,18 @@
+Hello {{learner_first_name}},
+
+Thank you for contacting FCEI Support.
+
+We have received your support request.
+
+Ticket number: {{ticket_number}}
+Subject: {{ticket_subject}}
+
+The FCEI Support Team will review your request and respond as soon as possible.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}

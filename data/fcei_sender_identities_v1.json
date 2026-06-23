@@ -1,0 +1,156 @@
+{
+  "domain": "fcei.eu",
+  "organisation": "Finland Creative Education Institute",
+  "identities": [
+    {
+      "key": "hello",
+      "email": "hello@fcei.eu",
+      "display_name": "FCEI Enquiries",
+      "purpose": "General public enquiries",
+      "public": true,
+      "reply_required": true,
+      "mailbox_type": "shared inbox/alias",
+      "recommended_owner": "Admin / Enquiries Team"
+    },
+    {
+      "key": "support",
+      "email": "support@fcei.eu",
+      "display_name": "FCEI Support",
+      "purpose": "Learner support, login issues, platform help, ticket replies",
+      "public": true,
+      "reply_required": true,
+      "mailbox_type": "shared inbox",
+      "recommended_owner": "Support Team"
+    },
+    {
+      "key": "courses",
+      "email": "courses@fcei.eu",
+      "display_name": "FCEI Course Team",
+      "purpose": "Course, module and learning-pathway questions",
+      "public": false,
+      "reply_required": true,
+      "mailbox_type": "shared inbox/alias",
+      "recommended_owner": "Course Team"
+    },
+    {
+      "key": "enrolments",
+      "email": "enrolments@fcei.eu",
+      "display_name": "FCEI Enrolments",
+      "purpose": "Enrolment confirmations, invitations and access emails",
+      "public": false,
+      "reply_required": true,
+      "mailbox_type": "transactional sender + shared reply inbox",
+      "recommended_owner": "Enrolments Team"
+    },
+    {
+      "key": "certificates",
+      "email": "certificates@fcei.eu",
+      "display_name": "FCEI Certificates",
+      "purpose": "Certificates, badges, verification and completion records",
+      "public": true,
+      "reply_required": true,
+      "mailbox_type": "shared inbox",
+      "recommended_owner": "Certificate Verification Team"
+    },
+    {
+      "key": "consultancy",
+      "email": "consultancy@fcei.eu",
+      "display_name": "FCEI Consultancy",
+      "purpose": "School, college and institutional consultancy enquiries",
+      "public": true,
+      "reply_required": true,
+      "mailbox_type": "shared inbox",
+      "recommended_owner": "Consultancy Team"
+    },
+    {
+      "key": "workshops",
+      "email": "workshops@fcei.eu",
+      "display_name": "FCEI Workshops",
+      "purpose": "Workshop booking and training delivery coordination",
+      "public": false,
+      "reply_required": true,
+      "mailbox_type": "shared inbox/alias",
+      "recommended_owner": "Workshop Team"
+    },
+    {
+      "key": "institutions",
+      "email": "institutions@fcei.eu",
+      "display_name": "FCEI Institutions",
+      "purpose": "School licences, college partnerships and institutional packages",
+      "public": true,
+      "reply_required": true,
+      "mailbox_type": "shared inbox",
+      "recommended_owner": "Institution Partnerships Team"
+    },
+    {
+      "key": "accounts",
+      "email": "accounts@fcei.eu",
+      "display_name": "FCEI Accounts",
+      "purpose": "Invoices, receipts, refunds, payment and finance correspondence",
+      "public": false,
+      "reply_required": true,
+      "mailbox_type": "shared inbox",
+      "recommended_owner": "Accounts Team"
+    },
+    {
+      "key": "admin",
+      "email": "admin@fcei.eu",
+      "display_name": "FCEI Administration",
+      "purpose": "Internal administration only; not a public sender",
+      "public": false,
+      "reply_required": true,
+      "mailbox_type": "private admin mailbox",
+      "recommended_owner": "Platform Administrator"
+    },
+    {
+      "key": "privacy",
+      "email": "privacy@fcei.eu",
+      "display_name": "FCEI Privacy",
+      "purpose": "Data protection, privacy, deletion/export requests",
+      "public": true,
+      "reply_required": true,
+      "mailbox_type": "shared inbox",
+      "recommended_owner": "Privacy / Compliance Team"
+    },
+    {
+      "key": "legal",
+      "email": "legal@fcei.eu",
+      "display_name": "FCEI Legal",
+      "purpose": "Terms, agreements, provider contracts and formal correspondence",
+      "public": false,
+      "reply_required": true,
+      "mailbox_type": "shared inbox/alias",
+      "recommended_owner": "Legal / Compliance Team"
+    },
+    {
+      "key": "media",
+      "email": "media@fcei.eu",
+      "display_name": "FCEI Media",
+      "purpose": "Press, media, brand and communications enquiries",
+      "public": false,
+      "reply_required": true,
+      "mailbox_type": "shared inbox/alias",
+      "recommended_owner": "Media Team"
+    },
+    {
+      "key": "partners",
+      "email": "partners@fcei.eu",
+      "display_name": "FCEI Partnerships",
+      "purpose": "Collaboration, affiliates, education partners and joint initiatives",
+      "public": false,
+      "reply_required": true,
+      "mailbox_type": "shared inbox/alias",
+      "recommended_owner": "Partnerships Team"
+    },
+    {
+      "key": "notifications",
+      "email": "no-reply@fcei.eu",
+      "display_name": "FCEI Learning Platform",
+      "purpose": "Automated system notifications where replies are not expected",
+      "public": false,
+      "reply_required": false,
+      "mailbox_type": "transactional sender only",
+      "recommended_owner": "Platform Mail Service"
+    }
+  ]
+}

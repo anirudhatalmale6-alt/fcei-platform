@@ -1,0 +1,15 @@
+Hello {{learner_first_name}},
+
+This is a reminder that your FCEI module is still in progress: {{module_title}}.
+
+Your progress has been saved automatically. You can return to the module and continue from where you stopped.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Continue Module: {{module_url}}

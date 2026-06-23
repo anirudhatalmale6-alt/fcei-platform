@@ -1,0 +1,17 @@
+Hello {{learner_first_name}},
+
+Thank you for your purchase.
+
+Your FCEI professional toolkit is now available: {{addon_title}}.
+
+This toolkit is connected to {{module_title}} and includes advanced downloadable templates, implementation tools, scenario resources, evidence rubrics and reflection materials.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Open Toolkit: {{addon_url}}

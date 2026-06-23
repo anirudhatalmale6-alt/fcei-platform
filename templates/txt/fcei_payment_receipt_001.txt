@@ -1,0 +1,20 @@
+Hello {{learner_first_name}},
+
+Thank you for your payment to the Finland Creative Education Institute.
+
+Purchase: {{product_title}}
+Amount: {{payment_amount}}
+Date: {{payment_date}}
+Receipt number: {{receipt_number}}
+
+You can access your purchase from your FCEI profile.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+View My Learning: {{profile_url}}

@@ -1,0 +1,17 @@
+Hello {{learner_first_name}},
+
+You have been invited by {{institution_name}} to access FCEI professional learning.
+
+Your assigned course is {{course_title}}.
+
+Please use the link below to activate your account and begin learning.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Accept Invitation: {{invitation_url}}

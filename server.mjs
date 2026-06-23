@@ -14,13 +14,16 @@ const SEED_PATH = path.join(__dirname, 'data', 'seed.json');
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const UPLOAD_DIR = path.join(__dirname, 'storage', 'uploads');
 const CERT_DIR = path.join(__dirname, 'storage', 'certificates');
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || 'enquiries@fcei.eu';
+const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || 'mailadmin@fcei.eu';
 const FROM_EMAIL = process.env.FROM_EMAIL || 'platform@fcei.eu';
+const TEMPLATE_DIR = path.join(__dirname, 'templates');
 
-function sendMail(to, subject, htmlBody) {
+function sendMail(to, subject, htmlBody, fromName, fromEmail) {
+  const senderName = fromName || 'FCEI Platform';
+  const senderEmail = fromEmail || FROM_EMAIL;
   return new Promise((resolve) => {
     const msg = [
-      'From: FCEI Platform <' + FROM_EMAIL + '>',
+      'From: ' + senderName + ' <' + senderEmail + '>',
       'To: ' + to,
       'Subject: ' + subject,
       'MIME-Version: 1.0',
@@ -31,7 +34,7 @@ function sendMail(to, subject, htmlBody) {
     ].join('\r\n');
     const cmds = [
       'EHLO fcei.eu',
-      'MAIL FROM:<' + FROM_EMAIL + '>',
+      'MAIL FROM:<' + senderEmail + '>',
       'RCPT TO:<' + to + '>',
       'DATA'
     ];
@@ -81,6 +84,57 @@ function bookingNotifyHtml(b) {
     '<p style="font-size:13px;color:#999;margin:0">Sent from the FCEI platform booking form</p>' +
     '</div></div>';
 }
+function renderVars(template, vars) {
+  return template.replace(/{{\s*([a-zA-Z0-9_]+)\s*}}/g, (_, key) => String(vars[key] ?? ''));
+}
+
+const _senderCache = new Map();
+const _templateCache = new Map();
+
+async function getSender(senderKey) {
+  if (_senderCache.has(senderKey)) return _senderCache.get(senderKey);
+  const s = await prisma.emailSenderIdentity.findUnique({ where: { senderKey } });
+  if (s) _senderCache.set(senderKey, s);
+  return s;
+}
+
+async function getTemplate(triggerName) {
+  if (_templateCache.has(triggerName)) return _templateCache.get(triggerName);
+  const t = await prisma.emailTemplate.findUnique({ where: { triggerName } });
+  if (t) _templateCache.set(triggerName, t);
+  return t;
+}
+
+function loadTemplateFile(templateId, type) {
+  const ext = type === 'html' ? 'html' : 'txt';
+  const fp = path.join(TEMPLATE_DIR, ext, templateId + '.' + ext);
+  try { return fs.readFileSync(fp, 'utf8'); } catch { return null; }
+}
+
+async function sendTriggeredEmail(triggerName, recipientEmail, variables) {
+  try {
+    const tmpl = await getTemplate(triggerName);
+    if (!tmpl || !tmpl.isActive) { console.log('Email trigger skipped (no template):', triggerName); return false; }
+    const sender = await getSender(tmpl.senderKey);
+    if (!sender || !sender.isActive) { console.log('Email trigger skipped (no sender):', tmpl.senderKey); return false; }
+
+    const vars = { ...variables, email_preferences_url: SITE_URL + '#/settings', privacy_policy_url: SITE_URL + '#/privacy', support_faq_url: SITE_URL + '#/support' };
+    const subject = renderVars(tmpl.subject, vars);
+    let htmlBody = loadTemplateFile(tmpl.templateId, 'html') || tmpl.bodyHtml;
+    if (htmlBody) htmlBody = renderVars(htmlBody, vars);
+    else htmlBody = '<p>' + renderVars(tmpl.preheader || subject, vars) + '</p>';
+
+    const logEntry = await prisma.emailDeliveryLog.create({ data: { templateId: tmpl.templateId, triggerName, recipientEmail, status: 'sending', createdAt: new Date() } });
+    const ok = await sendMail(recipientEmail, subject, htmlBody, sender.displayName, sender.email);
+    await prisma.emailDeliveryLog.update({ where: { id: logEntry.id }, data: { status: ok ? 'sent' : 'failed', sentAt: ok ? new Date() : null, errorMessage: ok ? null : 'SMTP delivery failed' } });
+    console.log('Email', ok ? 'sent' : 'FAILED', '-', triggerName, '->', recipientEmail);
+    return ok;
+  } catch (e) {
+    console.error('sendTriggeredEmail error:', triggerName, e.message);
+    return false;
+  }
+}
+
 const SCORM_DIR = path.join(__dirname, 'scorm');
 for (const d of [UPLOAD_DIR,CERT_DIR]) fs.mkdirSync(d,{recursive:true});
 const STRIPE_KEY = process.env.STRIPE_SECRET_KEY || process.env.STRIPE_RESTRICTED_KEY || '';
@@ -264,10 +318,17 @@ async function certificateIfComplete(user,courseId){
   const complete=all.every(m=>progresses.find(p=>p.moduleId===m.id&&p.status==='COMPLETE'));
   if(!complete) return null;
   let cert=await prisma.certificate.findFirst({where:{userId:user.id,courseId}});
+  const isNewCompletion = !cert;
   if(!cert){
     const code=`FCEI-${courseId}-${crypto.randomBytes(4).toString('hex').toUpperCase()}`;
     cert=await prisma.certificate.create({data:{id:uid('CERT'),userId:user.id,courseId,issuedAt:new Date(),pdfUrl:`/verify/${code}`}});
     fs.writeFileSync(path.join(CERT_DIR,`${code}.txt`),`FCEI Completion Record\n${user.name}\n${course(courseId)?.title}\n${code}\n${new Date().toISOString()}\n`);
+  }
+  if (isNewCompletion) {
+    const cTitle = course(courseId)?.title || courseId;
+    const firstName = user.name.split(' ')[0];
+    sendTriggeredEmail('course.completed', user.email, { learner_first_name: firstName, course_title: cTitle, profile_url: SITE_URL + '#/dashboard' }).catch(() => {});
+    sendTriggeredEmail('certificate.issued', user.email, { learner_first_name: firstName, course_title: cTitle, certificate_url: SITE_URL + '#/dashboard' }).catch(() => {});
   }
   return cert;
 }
@@ -322,6 +383,7 @@ async function api(req,res,pathname,query){
       const token=uid('SESS');
       await prisma.session.create({data:{id:uid('SESSION'),userId:u.id,token,createdAt:new Date()}});
       await audit('auth.register',u.id);
+      sendTriggeredEmail('user.account_created', u.email, { learner_first_name: u.name.split(' ')[0], login_url: SITE_URL + '#/login' }).catch(() => {});
       return sendJson(res,201,{user:publicUser(u),token});
     }
 
@@ -392,6 +454,12 @@ async function api(req,res,pathname,query){
         const pay=await prisma.payment.create({data:{id:uid('PAY'),orderId:o.id,userId:u.id,status:'PAID',amount:o.amount,currency:o.currency,provider:'stripe',createdAt:new Date()}});
         const ent=await grant(u,p);
         await audit('payment.confirmed',u.id,{orderId:o.id,entitlementId:ent.id,provider:'stripe'});
+        const pTitle = p.title || course((p.courseIds||[])[0])?.title || 'FCEI Course';
+        sendTriggeredEmail('payment.succeeded', u.email, { learner_first_name: u.name.split(' ')[0], product_title: pTitle, payment_amount: (o.currency||'USD') + ' ' + (o.amount/100).toFixed(2), payment_date: new Date().toLocaleDateString('en-GB'), receipt_number: pay.id, profile_url: SITE_URL + '#/dashboard' }).catch(() => {});
+        for (const cid of (p.courseIds||[])) {
+          const c = course(cid); const firstMod = mods(cid)[0];
+          sendTriggeredEmail('enrolment.completed', u.email, { learner_first_name: u.name.split(' ')[0], course_title: c?.title || cid, module_title: firstMod?.title || 'Module 1', course_url: SITE_URL + '#/course/' + cid }).catch(() => {});
+        }
         const d=await dashboard(u);
         return sendJson(res,200,{order:updated,payment:pay,entitlement:ent,dashboard:d});
       } catch(e) { console.error('Stripe verify error:', e); return bad(res,'Could not verify payment'); }
@@ -445,6 +513,7 @@ async function api(req,res,pathname,query){
       } else if(step==='evidence'){
         await prisma.evidenceSubmission.create({data:{id:uid('EVID'),userId:u.id,moduleId,title:sanitize(payload.title||'Evidence'),text:sanitize(payload.text||''),files:files||[],status:'SUBMITTED',submittedAt:new Date()}});
         updateData.evidenceSubmitted=true;
+        sendTriggeredEmail('evidence.submitted', u.email, { learner_first_name: u.name.split(' ')[0], module_title: m.title || moduleId, submission_url: SITE_URL + '#/lms/' + m.courseId + '/' + moduleId }).catch(() => {});
       } else if(step==='reflection'){
         await prisma.reflection.create({data:{id:uid('REFL'),userId:u.id,moduleId,text:sanitize(payload.text||''),submittedAt:new Date()}});
         updateData.reflectionSubmitted=true;
@@ -536,7 +605,8 @@ async function api(req,res,pathname,query){
       const b=jsonParse(await body(req));
       if(!b.name||!b.email) return bad(res,'Name and email are required');
       const rec=await prisma.booking.create({data:{id:uid('BOOK'),name:sanitize(b.name),email:b.email,service:sanitize(b.organisation||b.service||''),notes:sanitize(b.message||b.notes||''),createdAt:new Date(),status:'NEW'}});
-      sendMail(NOTIFY_EMAIL, 'New FCEI Enquiry from ' + sanitize(b.name), bookingNotifyHtml(b)).catch(()=>{});
+      sendMail(NOTIFY_EMAIL, 'New FCEI Enquiry from ' + sanitize(b.name), bookingNotifyHtml(b), 'FCEI Platform', 'no-reply@fcei.eu').catch(()=>{});
+      sendTriggeredEmail('consultancy.enquiry_submitted', b.email, { contact_first_name: (b.name||'').split(' ')[0], institution_name: b.organisation || b.service || 'your institution', consultancy_area: b.audience || 'General enquiry' }).catch(() => {});
       return sendJson(res,200,{booking:rec});
     }
 
@@ -570,6 +640,24 @@ async function api(req,res,pathname,query){
       const slug=b.slug||uid('page');
       await prisma.cmsPage.upsert({where:{slug},create:{id:uid('CMS'),slug,content:b},update:{content:b}});
       return sendJson(res,200,{saved:true});
+    }
+
+    if(req.method==='GET' && pathname==='/api/admin/email-log'){
+      const admin=await requireAdmin(req,res); if(!admin)return;
+      const logs=await prisma.emailDeliveryLog.findMany({orderBy:{createdAt:'desc'},take:50});
+      return sendJson(res,200,{logs});
+    }
+
+    if(req.method==='GET' && pathname==='/api/admin/email-senders'){
+      const admin=await requireAdmin(req,res); if(!admin)return;
+      const senders=await prisma.emailSenderIdentity.findMany({orderBy:{senderKey:'asc'}});
+      return sendJson(res,200,{senders});
+    }
+
+    if(req.method==='GET' && pathname==='/api/admin/email-templates'){
+      const admin=await requireAdmin(req,res); if(!admin)return;
+      const templates=await prisma.emailTemplate.findMany({orderBy:{triggerName:'asc'}});
+      return sendJson(res,200,{templates:templates.map(t=>({...t,bodyHtml:undefined,bodyText:undefined}))});
     }
 
     if(req.method==='GET' && pathname.match(/^\/api\/certificates\/verify\/([^/]+)$/)){

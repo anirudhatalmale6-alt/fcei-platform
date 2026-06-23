@@ -1,0 +1,17 @@
+Hello {{learner_first_name}},
+
+You have started {{course_title}}.
+
+This course is part of the FCEI Finnish Teacher Training Development Framework. It connects Finnish education principles with practical evidence, reflection and improvement.
+
+Your next step is to complete the first module activity and review the evidence requirement.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Continue Course: {{course_url}}

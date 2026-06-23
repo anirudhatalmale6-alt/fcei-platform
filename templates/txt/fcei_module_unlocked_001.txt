@@ -1,0 +1,15 @@
+Hello {{learner_first_name}},
+
+Your next module is now available: {{module_title}}.
+
+In this module, you will continue building practical professional evidence through guided learning, downloadable resources, action tasks and reflection.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Open Module: {{module_url}}

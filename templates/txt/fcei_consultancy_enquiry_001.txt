@@ -1,0 +1,17 @@
+Hello {{contact_first_name}},
+
+Thank you for contacting the Finland Creative Education Institute.
+
+We have received your consultancy enquiry for {{institution_name}}.
+
+Your enquiry area: {{consultancy_area}}.
+
+FCEI consultancy supports schools, colleges, education teams, leaders, teachers, trainers and stakeholders with practical, evidence-informed institutional improvement.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}

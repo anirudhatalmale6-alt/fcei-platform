@@ -1,0 +1,15 @@
+Hello {{learner_first_name}},
+
+Your evidence task for {{module_title}} has been submitted.
+
+Your submission has been received and stored in your FCEI learning profile. If your module requires review, you will receive an update when the review status changes.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+View Submission: {{submission_url}}

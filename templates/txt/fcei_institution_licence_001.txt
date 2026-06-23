@@ -1,0 +1,17 @@
+Hello {{admin_first_name}},
+
+Your FCEI institution licence has been activated for {{institution_name}}.
+
+Your licence includes access for {{seat_count}} learners.
+
+Institution administrators can invite learners, monitor progress, access reports and manage course enrolments from the institution dashboard.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Open Institution Dashboard: {{institution_dashboard_url}}

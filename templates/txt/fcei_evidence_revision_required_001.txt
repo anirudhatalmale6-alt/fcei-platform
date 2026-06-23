@@ -1,0 +1,19 @@
+Hello {{learner_first_name}},
+
+Your evidence submission for {{module_title}} needs revision before it can be approved.
+
+Reviewer note:
+
+{{reviewer_note}}
+
+Please update your submission by following the evidence requirement and upload the revised version through your module page.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Revise Submission: {{submission_url}}

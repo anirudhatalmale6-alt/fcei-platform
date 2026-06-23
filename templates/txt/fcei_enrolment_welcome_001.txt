@@ -1,0 +1,23 @@
+Hello {{learner_first_name}},
+
+Welcome to the Finland Creative Education Institute (FCEI).
+
+You are now enrolled in {{course_title}}.
+
+Module: {{module_title}}
+
+This FCEI professional learning module is designed to help educators, leaders, trainers and education teams translate Finnish education principles into practical, evidence-informed action.
+
+You can access your module videos, lesson pages, downloadable templates, reflection activities and evidence-upload tasks from your FCEI profile.
+
+Your progress will be saved automatically, so you can return at your own pace.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Go to Course Platform: {{course_url}}

@@ -304,3 +304,46 @@ model AuditLog {
 
   @@map("audit_logs")
 }
+
+model EmailSenderIdentity {
+  id          Int      @id @default(autoincrement())
+  senderKey   String   @unique @map("sender_key")
+  displayName String   @map("display_name")
+  email       String
+  replyTo     String   @map("reply_to")
+  purpose     String?
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("email_sender_identities")
+}
+
+model EmailTemplate {
+  id          Int      @id @default(autoincrement())
+  templateId  String   @unique @map("template_id")
+  triggerName String   @unique @map("trigger_name")
+  senderKey   String   @map("sender_key")
+  subject     String
+  preheader   String?
+  bodyHtml    String?  @map("body_html")
+  bodyText    String?  @map("body_text")
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("email_templates")
+}
+
+model EmailDeliveryLog {
+  id                Int      @id @default(autoincrement())
+  templateId        String   @map("template_id")
+  triggerName       String   @map("trigger_name")
+  recipientEmail    String   @map("recipient_email")
+  providerMessageId String?  @map("provider_message_id")
+  status            String   @default("queued")
+  errorMessage      String?  @map("error_message")
+  sentAt            DateTime? @map("sent_at")
+  createdAt         DateTime @default(now()) @map("created_at")
+
+  @@map("email_delivery_log")
+}

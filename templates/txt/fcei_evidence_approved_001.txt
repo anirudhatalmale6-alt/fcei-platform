@@ -1,0 +1,15 @@
+Hello {{learner_first_name}},
+
+Your evidence submission for {{module_title}} has been approved.
+
+This means your submitted artefact meets the module evidence requirement and has been recorded in your FCEI profile.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+View Module Progress: {{module_url}}

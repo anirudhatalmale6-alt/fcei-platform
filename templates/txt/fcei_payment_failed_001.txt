@@ -1,0 +1,15 @@
+Hello {{learner_first_name}},
+
+We were unable to complete the payment for {{product_title}}.
+
+Please review your payment method or try again using the secure checkout link below. Your course or toolkit access may remain pending until payment is completed.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+Update Payment: {{payment_retry_url}}

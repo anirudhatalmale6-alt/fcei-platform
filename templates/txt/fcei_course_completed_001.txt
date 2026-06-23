@@ -1,0 +1,15 @@
+Hello {{learner_first_name}},
+
+Congratulations. You have completed {{course_title}}.
+
+Your completion has been recorded in your FCEI profile. You have completed the learning activities, evidence tasks and reflection requirements linked to this course within the FCEI Finnish Teacher Training Development Framework.
+
+Warm regards,
+The FCEI Team
+Finland Creative Education Institute
+
+FCEI Finnish Teacher Training Development Framework
+
+Manage your email preferences: {{email_preferences_url}}
+
+View Completion Record: {{profile_url}}
