@@ -15467,7 +15467,7 @@
       "id": "PROD-C03-COURSE",
       "type": "COURSE",
       "title": "Active Learning, Play, Movement and Learning Environment Design",
-      "price": 1900,
+      "price": 4900,
       "launchPrice": 1900,
       "currency": "USD",
       "courseIds": [
@@ -15483,7 +15483,7 @@
       "id": "PROD-C04-COURSE",
       "type": "COURSE",
       "title": "Formative Assessment, Feedback and Self-Assessment",
-      "price": 2900,
+      "price": 4900,
       "launchPrice": 2900,
       "currency": "USD",
       "courseIds": [
@@ -15499,7 +15499,7 @@
       "id": "PROD-C05-COURSE",
       "type": "COURSE",
       "title": "Early Support and the Leave-No-Child-Behind Classroom Cycle",
-      "price": 2900,
+      "price": 4900,
       "launchPrice": 2900,
       "currency": "USD",
       "courseIds": [
@@ -15515,7 +15515,7 @@
       "id": "PROD-C06-COURSE",
       "type": "COURSE",
       "title": "Mixed-Ability Differentiation with Support/Core/Extension Routes",
-      "price": 1900,
+      "price": 3900,
       "launchPrice": 1900,
       "currency": "USD",
       "courseIds": [
@@ -15531,7 +15531,7 @@
       "id": "PROD-C07-COURSE",
       "type": "COURSE",
       "title": "Curriculum Adaptation Studio",
-      "price": 1900,
+      "price": 3900,
       "launchPrice": 1900,
       "currency": "USD",
       "courseIds": [
@@ -15547,7 +15547,7 @@
       "id": "PROD-C08-COURSE",
       "type": "COURSE",
       "title": "Phenomenon-Based Projects and Transversal Competence",
-      "price": 2900,
+      "price": 3900,
       "launchPrice": 2900,
       "currency": "USD",
       "courseIds": [
@@ -15563,7 +15563,7 @@
       "id": "PROD-C09-COURSE",
       "type": "COURSE",
       "title": "Teacher as Researcher and Classroom Improvement",
-      "price": 2900,
+      "price": 4900,
       "launchPrice": 2900,
       "currency": "USD",
       "courseIds": [
@@ -15579,7 +15579,7 @@
       "id": "PROD-C10-COURSE",
       "type": "COURSE",
       "title": "Leadership, Quality Culture and Institutional Self-Evaluation",
-      "price": 3900,
+      "price": 5900,
       "launchPrice": 3700,
       "currency": "USD",
       "courseIds": [
@@ -15611,7 +15611,7 @@
       "id": "PROD-C12-COURSE",
       "type": "COURSE",
       "title": "Blended Learning Implementation and Digital Finnish Teacher Training Development Framework Operations",
-      "price": 4900,
+      "price": 5900,
       "launchPrice": 4700,
       "currency": "USD",
       "courseIds": [
@@ -15627,7 +15627,7 @@
       "id": "PROD-C13-COURSE",
       "type": "COURSE",
       "title": "TVET Competence-Based Learning and Workplace Evidence",
-      "price": 4900,
+      "price": 5900,
       "launchPrice": 4700,
       "currency": "USD",
       "courseIds": [
@@ -15643,7 +15643,7 @@
       "id": "PROD-C14-COURSE",
       "type": "COURSE",
       "title": "FCEI Consultancy, Workshops and Institutional Implementation",
-      "price": 5900,
+      "price": 7900,
       "launchPrice": 5700,
       "currency": "USD",
       "courseIds": [
@@ -15659,7 +15659,7 @@
       "id": "PROD-C01-M01-MODULE",
       "type": "MODULE",
       "title": "Principle in Action: Values Become Visible (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C01"
@@ -15675,7 +15675,7 @@
       "id": "PROD-C01-M02-MODULE",
       "type": "MODULE",
       "title": "Equity as Access with High Expectations (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C01"
@@ -15691,7 +15691,7 @@
       "id": "PROD-C01-M03-MODULE",
       "type": "MODULE",
       "title": "Trust and Professional Responsibility (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C01"
@@ -15707,7 +15707,7 @@
       "id": "PROD-C01-M04-MODULE",
       "type": "MODULE",
       "title": "Wellbeing as a Learning Condition (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C01"
@@ -15723,7 +15723,7 @@
       "id": "PROD-C01-M05-MODULE",
       "type": "MODULE",
       "title": "Joy of Learning and Motivation (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C01"
@@ -15739,7 +15739,7 @@
       "id": "PROD-C01-M06-MODULE",
       "type": "MODULE",
       "title": "Ethical Finnish-Inspired Positioning and Local Adaptation (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C01"
@@ -15755,7 +15755,7 @@
       "id": "PROD-C02-M01-MODULE",
       "type": "MODULE",
       "title": "Learner Agency and Structured Choice (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C02"
@@ -15771,7 +15771,7 @@
       "id": "PROD-C02-M02-MODULE",
       "type": "MODULE",
       "title": "Voice, Choice and Responsibility (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C02"
@@ -15787,7 +15787,7 @@
       "id": "PROD-C02-M03-MODULE",
       "type": "MODULE",
       "title": "Self-Assessment and Goal Setting (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C02"
@@ -15803,7 +15803,7 @@
       "id": "PROD-C02-M04-MODULE",
       "type": "MODULE",
       "title": "Metacognition and Learning-to-Learn (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C02"
@@ -15819,7 +15819,7 @@
       "id": "PROD-C02-M05-MODULE",
       "type": "MODULE",
       "title": "Learner Dialogue and Collaborative Ownership (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C02"
@@ -15835,7 +15835,7 @@
       "id": "PROD-C02-M06-MODULE",
       "type": "MODULE",
       "title": "Evidence of Agency and Joy (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C02"
@@ -15851,7 +15851,7 @@
       "id": "PROD-C03-M01-MODULE",
       "type": "MODULE",
       "title": "Active Learning with Clear Learning Aims (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C03"
@@ -15867,7 +15867,7 @@
       "id": "PROD-C03-M02-MODULE",
       "type": "MODULE",
       "title": "Purposeful Play and Exploration (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C03"
@@ -15883,7 +15883,7 @@
       "id": "PROD-C03-M03-MODULE",
       "type": "MODULE",
       "title": "Movement-Rich Learning Routines (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C03"
@@ -15899,7 +15899,7 @@
       "id": "PROD-C03-M04-MODULE",
       "type": "MODULE",
       "title": "Learning Environment and Classroom Layout (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C03"
@@ -15915,7 +15915,7 @@
       "id": "PROD-C03-M05-MODULE",
       "type": "MODULE",
       "title": "Outdoor and Real-World Learning (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C03"
@@ -15931,7 +15931,7 @@
       "id": "PROD-C03-M06-MODULE",
       "type": "MODULE",
       "title": "Calm Routines for Active Classrooms (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C03"
@@ -15947,7 +15947,7 @@
       "id": "PROD-C04-M01-MODULE",
       "type": "MODULE",
       "title": "Formative Assessment as Evidence During Learning (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C04"
@@ -15963,7 +15963,7 @@
       "id": "PROD-C04-M02-MODULE",
       "type": "MODULE",
       "title": "Descriptive Feedback and Next Steps (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C04"
@@ -15979,7 +15979,7 @@
       "id": "PROD-C04-M03-MODULE",
       "type": "MODULE",
       "title": "Learner Self-Assessment Tools (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C04"
@@ -15995,7 +15995,7 @@
       "id": "PROD-C04-M04-MODULE",
       "type": "MODULE",
       "title": "Success Criteria and Exemplars (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C04"
@@ -16011,7 +16011,7 @@
       "id": "PROD-C04-M05-MODULE",
       "type": "MODULE",
       "title": "Using Evidence to Adjust the Next Lesson (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C04"
@@ -16027,7 +16027,7 @@
       "id": "PROD-C04-M06-MODULE",
       "type": "MODULE",
       "title": "Feedback Culture Without Fear (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C04"
@@ -16043,7 +16043,7 @@
       "id": "PROD-C05-M01-MODULE",
       "type": "MODULE",
       "title": "Early Support Triggers and Evidence of Need (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C05"
@@ -16059,7 +16059,7 @@
       "id": "PROD-C05-M02-MODULE",
       "type": "MODULE",
       "title": "Group-Specific Support Before Failure (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C05"
@@ -16075,7 +16075,7 @@
       "id": "PROD-C05-M03-MODULE",
       "type": "MODULE",
       "title": "Student-Specific Support Pathways (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C05"
@@ -16091,7 +16091,7 @@
       "id": "PROD-C05-M04-MODULE",
       "type": "MODULE",
       "title": "Family and Support-Team Communication (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C05"
@@ -16107,7 +16107,7 @@
       "id": "PROD-C05-M05-MODULE",
       "type": "MODULE",
       "title": "Dignity, Access and Inclusion in Support (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C05"
@@ -16123,7 +16123,7 @@
       "id": "PROD-C05-M06-MODULE",
       "type": "MODULE",
       "title": "Review, Escalation and Support Evidence (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C05"
@@ -16139,7 +16139,7 @@
       "id": "PROD-C06-M01-MODULE",
       "type": "MODULE",
       "title": "Support-Core-Extension Lesson Design (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C06"
@@ -16155,7 +16155,7 @@
       "id": "PROD-C06-M02-MODULE",
       "type": "MODULE",
       "title": "Language Scaffolding for Mixed-Ability Classes (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C06"
@@ -16171,7 +16171,7 @@
       "id": "PROD-C06-M03-MODULE",
       "type": "MODULE",
       "title": "Differentiated Task Routes Without Lowering Expectations (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C06"
@@ -16187,7 +16187,7 @@
       "id": "PROD-C06-M04-MODULE",
       "type": "MODULE",
       "title": "Flexible Grouping and Peer Support (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C06"
@@ -16203,7 +16203,7 @@
       "id": "PROD-C06-M05-MODULE",
       "type": "MODULE",
       "title": "Extension Through Reasoning, Creativity and Transfer (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C06"
@@ -16219,7 +16219,7 @@
       "id": "PROD-C06-M06-MODULE",
       "type": "MODULE",
       "title": "Evidence-Based Differentiation Review (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C06"
@@ -16235,7 +16235,7 @@
       "id": "PROD-C07-M01-MODULE",
       "type": "MODULE",
       "title": "Adapting Imported Coursebooks Responsibly (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C07"
@@ -16251,7 +16251,7 @@
       "id": "PROD-C07-M02-MODULE",
       "type": "MODULE",
       "title": "Finnish-Inspired Lesson Planning Ethos (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C07"
@@ -16267,7 +16267,7 @@
       "id": "PROD-C07-M03-MODULE",
       "type": "MODULE",
       "title": "A2-B2 ESL Reading Activity Adaptation (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C07"
@@ -16283,7 +16283,7 @@
       "id": "PROD-C07-M04-MODULE",
       "type": "MODULE",
       "title": "Literature and Prose Unit Adaptation (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C07"
@@ -16299,7 +16299,7 @@
       "id": "PROD-C07-M05-MODULE",
       "type": "MODULE",
       "title": "Primary Mathematics and Science Unit Adaptation (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C07"
@@ -16315,7 +16315,7 @@
       "id": "PROD-C07-M06-MODULE",
       "type": "MODULE",
       "title": "Local Syllabi Alignment and Adaptation Evidence (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C07"
@@ -16331,7 +16331,7 @@
       "id": "PROD-C08-M01-MODULE",
       "type": "MODULE",
       "title": "Phenomenon-Based Learning Foundations (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C08"
@@ -16347,7 +16347,7 @@
       "id": "PROD-C08-M02-MODULE",
       "type": "MODULE",
       "title": "Driving Questions and Real-World Contexts (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C08"
@@ -16363,7 +16363,7 @@
       "id": "PROD-C08-M03-MODULE",
       "type": "MODULE",
       "title": "Multidisciplinary Planning with Subject Integrity (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C08"
@@ -16379,7 +16379,7 @@
       "id": "PROD-C08-M04-MODULE",
       "type": "MODULE",
       "title": "Transversal Competence Mapping (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C08"
@@ -16395,7 +16395,7 @@
       "id": "PROD-C08-M05-MODULE",
       "type": "MODULE",
       "title": "Project Evidence, Reflection and Assessment (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C08"
@@ -16411,7 +16411,7 @@
       "id": "PROD-C08-M06-MODULE",
       "type": "MODULE",
       "title": "Sustainable Future and Community Connection (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C08"
@@ -16427,7 +16427,7 @@
       "id": "PROD-C09-M01-MODULE",
       "type": "MODULE",
       "title": "Teacher Inquiry and Professional Agency (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C09"
@@ -16443,7 +16443,7 @@
       "id": "PROD-C09-M02-MODULE",
       "type": "MODULE",
       "title": "Identifying a Classroom Improvement Question (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C09"
@@ -16459,7 +16459,7 @@
       "id": "PROD-C09-M03-MODULE",
       "type": "MODULE",
       "title": "One-Change Trial Design (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C09"
@@ -16475,7 +16475,7 @@
       "id": "PROD-C09-M04-MODULE",
       "type": "MODULE",
       "title": "Collecting Learner Evidence Ethically (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C09"
@@ -16491,7 +16491,7 @@
       "id": "PROD-C09-M05-MODULE",
       "type": "MODULE",
       "title": "Interpreting Evidence and Improving Practice (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C09"
@@ -16507,7 +16507,7 @@
       "id": "PROD-C09-M06-MODULE",
       "type": "MODULE",
       "title": "Sharing Practice Without Compliance Pressure (Single Module)",
-      "price": 0,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C09"
@@ -16523,7 +16523,7 @@
       "id": "PROD-C10-M01-MODULE",
       "type": "MODULE",
       "title": "Enhancement-Led Evaluation and Quality Culture (Single Module)",
-      "price": 100,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C10"
@@ -16539,7 +16539,7 @@
       "id": "PROD-C10-M02-MODULE",
       "type": "MODULE",
       "title": "Evidence Walks Without Blame (Single Module)",
-      "price": 100,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C10"
@@ -16555,7 +16555,7 @@
       "id": "PROD-C10-M03-MODULE",
       "type": "MODULE",
       "title": "Professional Dialogue and Staff Trust (Single Module)",
-      "price": 100,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C10"
@@ -16571,7 +16571,7 @@
       "id": "PROD-C10-M04-MODULE",
       "type": "MODULE",
       "title": "Parent and Community Voice in Quality Improvement (Single Module)",
-      "price": 100,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C10"
@@ -16587,7 +16587,7 @@
       "id": "PROD-C10-M05-MODULE",
       "type": "MODULE",
       "title": "Policy, Routine and Local Curriculum Alignment (Single Module)",
-      "price": 100,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C10"
@@ -16603,7 +16603,7 @@
       "id": "PROD-C10-M06-MODULE",
       "type": "MODULE",
       "title": "Quality Dashboard and Portfolio Evidence (Single Module)",
-      "price": 100,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C10"
@@ -16619,7 +16619,7 @@
       "id": "PROD-C11-M01-MODULE",
       "type": "MODULE",
       "title": "SISU Preschool Principles and Daily Rhythm (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C11"
@@ -16635,7 +16635,7 @@
       "id": "PROD-C11-M02-MODULE",
       "type": "MODULE",
       "title": "Play-Based Language and Early Literacy (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C11"
@@ -16651,7 +16651,7 @@
       "id": "PROD-C11-M03-MODULE",
       "type": "MODULE",
       "title": "Movement, Outdoor Learning and Wellbeing (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C11"
@@ -16667,7 +16667,7 @@
       "id": "PROD-C11-M04-MODULE",
       "type": "MODULE",
       "title": "Early Numeracy Through Manipulatives and Play (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C11"
@@ -16683,7 +16683,7 @@
       "id": "PROD-C11-M05-MODULE",
       "type": "MODULE",
       "title": "Parent Partnership and Home Learning Cards (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C11"
@@ -16699,7 +16699,7 @@
       "id": "PROD-C11-M06-MODULE",
       "type": "MODULE",
       "title": "Preschool Observation, Portfolio and Readiness Evidence (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C11"
@@ -16715,7 +16715,7 @@
       "id": "PROD-C12-M01-MODULE",
       "type": "MODULE",
       "title": "Blended Learning With Pedagogical Purpose (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C12"
@@ -16731,7 +16731,7 @@
       "id": "PROD-C12-M02-MODULE",
       "type": "MODULE",
       "title": "Interactive Digital Task Design (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C12"
@@ -16747,7 +16747,7 @@
       "id": "PROD-C12-M03-MODULE",
       "type": "MODULE",
       "title": "AI as Teacher Planning Assistant (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C12"
@@ -16763,7 +16763,7 @@
       "id": "PROD-C12-M04-MODULE",
       "type": "MODULE",
       "title": "Digital Evidence Portfolios (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C12"
@@ -16779,7 +16779,7 @@
       "id": "PROD-C12-M05-MODULE",
       "type": "MODULE",
       "title": "Accessibility and Multimodal Resource Design (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C12"
@@ -16795,7 +16795,7 @@
       "id": "PROD-C12-M06-MODULE",
       "type": "MODULE",
       "title": "Responsible Digital Finnish Teacher Training Development Framework Deployment (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C12"
@@ -16811,7 +16811,7 @@
       "id": "PROD-C13-M01-MODULE",
       "type": "MODULE",
       "title": "TVET as Competence-Based Education (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C13"
@@ -16827,7 +16827,7 @@
       "id": "PROD-C13-M02-MODULE",
       "type": "MODULE",
       "title": "Rewriting Topics as Observable Work Tasks (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C13"
@@ -16843,7 +16843,7 @@
       "id": "PROD-C13-M03-MODULE",
       "type": "MODULE",
       "title": "Workplace Scenarios and Industry Relevance (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C13"
@@ -16859,7 +16859,7 @@
       "id": "PROD-C13-M04-MODULE",
       "type": "MODULE",
       "title": "Practical Demonstration Instead of Written-Only Testing (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C13"
@@ -16875,7 +16875,7 @@
       "id": "PROD-C13-M05-MODULE",
       "type": "MODULE",
       "title": "Evidence Portfolios and Assessor Judgement (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C13"
@@ -16891,7 +16891,7 @@
       "id": "PROD-C13-M06-MODULE",
       "type": "MODULE",
       "title": "Employer Feedback and Continuous Improvement (Single Module)",
-      "price": 200,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C13"
@@ -16907,7 +16907,7 @@
       "id": "PROD-C14-M01-MODULE",
       "type": "MODULE",
       "title": "FCEI Consultancy Model and Client Diagnosis (Single Module)",
-      "price": 400,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C14"
@@ -16923,7 +16923,7 @@
       "id": "PROD-C14-M02-MODULE",
       "type": "MODULE",
       "title": "School Needs Analysis and Evidence Walk (Single Module)",
-      "price": 400,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C14"
@@ -16939,7 +16939,7 @@
       "id": "PROD-C14-M03-MODULE",
       "type": "MODULE",
       "title": "Finnish Teacher Development Workshop Design (Single Module)",
-      "price": 400,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C14"
@@ -16955,7 +16955,7 @@
       "id": "PROD-C14-M04-MODULE",
       "type": "MODULE",
       "title": "Leadership Programme Workshop Design (Single Module)",
-      "price": 400,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C14"
@@ -16971,7 +16971,7 @@
       "id": "PROD-C14-M05-MODULE",
       "type": "MODULE",
       "title": "Implementation Roadmap and Follow-Up Support (Single Module)",
-      "price": 400,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C14"
@@ -16987,7 +16987,7 @@
       "id": "PROD-C14-M06-MODULE",
       "type": "MODULE",
       "title": "Commercial QA, Reporting and Renewal Cycle (Single Module)",
-      "price": 400,
+      "price": 1100,
       "currency": "USD",
       "courseIds": [
         "C14"
@@ -17003,7 +17003,7 @@
       "id": "PROD-B01-BUNDLE",
       "type": "BUNDLE",
       "title": "Teacher Practitioner Pathway",
-      "price": 9100,
+      "price": 12900,
       "listPrice": 17200,
       "discountPercent": 42.4,
       "currency": "USD",
@@ -17024,7 +17024,7 @@
       "id": "PROD-B02-BUNDLE",
       "type": "BUNDLE",
       "title": "Advanced Pedagogy and Curriculum Pathway",
-      "price": 10100,
+      "price": 19900,
       "listPrice": 14800,
       "discountPercent": 26.4,
       "currency": "USD",
@@ -17043,7 +17043,7 @@
       "id": "PROD-B03-BUNDLE",
       "type": "BUNDLE",
       "title": "Leadership and Quality Culture Pathway",
-      "price": 12100,
+      "price": 24900,
       "listPrice": 17100,
       "discountPercent": 24.6,
       "currency": "USD",
@@ -17061,9 +17061,9 @@
       "id": "PROD-B04-BUNDLE",
       "type": "BUNDLE",
       "title": "Early Years Implementation Pathway",
-      "price": 7100,
+      "price": 12900,
       "listPrice": 10400,
-      "discountPercent": 24.0,
+      "discountPercent": 24,
       "currency": "USD",
       "courseIds": [
         "C10",
@@ -17078,7 +17078,7 @@
       "id": "PROD-B05-BUNDLE",
       "type": "BUNDLE",
       "title": "TVET Implementation Pathway",
-      "price": 11100,
+      "price": 19900,
       "listPrice": 16100,
       "discountPercent": 26.1,
       "currency": "USD",
@@ -17096,9 +17096,9 @@
       "id": "PROD-B06-BUNDLE",
       "type": "BUNDLE",
       "title": "Full FCEI Professional Library",
-      "price": 19100,
+      "price": 39900,
       "listPrice": 56800,
-      "discountPercent": 65.0,
+      "discountPercent": 65,
       "currency": "USD",
       "courseIds": [
         "C01",
@@ -17125,7 +17125,7 @@
       "id": "TK-C01",
       "type": "TOOLKIT",
       "title": "C01 Course Toolkit",
-      "price": 900,
+      "price": 700,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17139,7 +17139,7 @@
       "id": "TK-C02",
       "type": "TOOLKIT",
       "title": "C02 Course Toolkit",
-      "price": 900,
+      "price": 700,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17153,7 +17153,7 @@
       "id": "TK-C03",
       "type": "TOOLKIT",
       "title": "C03 Course Toolkit",
-      "price": 900,
+      "price": 700,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17195,7 +17195,7 @@
       "id": "TK-C06",
       "type": "TOOLKIT",
       "title": "C06 Course Toolkit",
-      "price": 900,
+      "price": 700,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17209,7 +17209,7 @@
       "id": "TK-C07",
       "type": "TOOLKIT",
       "title": "C07 Course Toolkit",
-      "price": 900,
+      "price": 700,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17251,7 +17251,7 @@
       "id": "TK-C10",
       "type": "TOOLKIT",
       "title": "C10 Course Toolkit",
-      "price": 2900,
+      "price": 1900,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17265,7 +17265,7 @@
       "id": "TK-C11",
       "type": "TOOLKIT",
       "title": "C11 Course Toolkit",
-      "price": 2900,
+      "price": 1900,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17279,7 +17279,7 @@
       "id": "TK-C12",
       "type": "TOOLKIT",
       "title": "C12 Course Toolkit",
-      "price": 2900,
+      "price": 1900,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17293,7 +17293,7 @@
       "id": "TK-C13",
       "type": "TOOLKIT",
       "title": "C13 Course Toolkit",
-      "price": 2900,
+      "price": 1900,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17307,7 +17307,7 @@
       "id": "TK-C14",
       "type": "TOOLKIT",
       "title": "C14 Course Toolkit",
-      "price": 3900,
+      "price": 1900,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17321,7 +17321,7 @@
       "id": "TK-MODULE",
       "type": "TOOLKIT",
       "title": "Single Module Toolkit",
-      "price": 0,
+      "price": 700,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17335,7 +17335,7 @@
       "id": "TK-LIBRARY",
       "type": "TOOLKIT",
       "title": "Full FCEI Toolkit Library",
-      "price": 14100,
+      "price": 14900,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17663,7 +17663,7 @@
       "id": "FCEI-FULL-LIBRARY",
       "type": "FULL_LIBRARY",
       "title": "Full FCEI Professional Library",
-      "price": 19100,
+      "price": 39900,
       "currency": "USD",
       "courseIds": [
         "C01",
@@ -17692,7 +17692,7 @@
       "id": "TOOLKIT-FULL",
       "type": "TOOLKIT",
       "title": "Full FCEI Toolkit Library",
-      "price": 14100,
+      "price": 14900,
       "currency": "USD",
       "courseIds": [],
       "toolkitIds": [
@@ -17738,7 +17738,7 @@
       "brandHeader": "FCEI Finnish Creative Education",
       "institutionName": "Finland Creative Education Institute",
       "strapline": "Research-informed teacher training inspired by Finnish education principles.",
-      "topLine": "Finland Creative Education Institute Courses \u00b7 TVET \u00b7 Consultancy \u00b7 Workshops",
+      "topLine": "Finland Creative Education Institute Courses · TVET · Consultancy · Workshops",
       "searchHint": "Try assessment, mixed-ability, TVET, leadership or a course code like C4-M02.",
       "footerNotice": "Not an official Finnish government certification unless separately accredited or approved."
     },
@@ -17746,9 +17746,9 @@
       "primaryCta": "Find Courses",
       "secondaryCta": "Learner Login",
       "enquireCta": "Enquire Now",
-      "searchTitle": "Find Courses \u00b7 18 areas",
+      "searchTitle": "Find Courses · 18 areas",
       "noMatches": "No matches. Show everything",
-      "browse": "Browse all courses \u2192 Finnish Curriculum Framework"
+      "browse": "Browse all courses → Finnish Curriculum Framework"
     },
     "findCourse": {
       "title": "Find Your Course",
@@ -18444,19 +18444,19 @@
       "brandShort": "FCEI",
       "brandHeader": "FCEI Finnish Creative Education",
       "institutionName": "Finland Creative Education Institute",
-      "topLine": "Finland Creative Education Institute \u00b7 Courses \u00b7 TVET \u00b7 Consultancy \u00b7 Workshops",
+      "topLine": "Finland Creative Education Institute · Courses · TVET · Consultancy · Workshops",
       "metaDescription": "Built upon EDUFI and FINEEC-aligned, enhancement-led practices and evidence-based capacity building, our expert consultancy guides school leaders and parents while providing comprehensive teacher development, helping stakeholders make informed, future-focused decisions for their learners.",
       "footerAbout": "Finland Creative Education Institute. Research-informed teacher training shaping the future of global education. Our Capstone Certification confirms alignment with the rigorous educational benchmarks and quality criteria set by EDUFI and FINEEC. In the Finnish education system, official teaching qualifications are embedded directly within university academic degrees, a standard of excellence that underpins every FCEI pathway.",
       "footerNotice": "",
-      "searchHint": "Try \u201cassessment\u201d, \u201cmixed-ability\u201d, \u201cTVET\u201d, \u201cleadership\u201d or a course code like C4-M02.",
+      "searchHint": "Try “assessment”, “mixed-ability”, “TVET”, “leadership” or a course code like C4-M02.",
       "findCoursesLabel": "Find Courses",
-      "findCoursesAreas": "Find Courses \u00b7 18 areas",
+      "findCoursesAreas": "Find Courses · 18 areas",
       "noMatches": "No matches. Show everything",
-      "browseAll": "Browse all courses \u2192",
+      "browseAll": "Browse all courses →",
       "frameworkLink": "Finnish Curriculum Framework",
       "learnerLogin": "Learner Login",
       "enquireNow": "Enquire Now",
-      "copyright": "\u00a9 2026 Finland Creative Education Institute"
+      "copyright": "© 2026 Finland Creative Education Institute"
     },
     "catalogue": {
       "title": "FCEI Course Catalogue",
@@ -18652,10 +18652,10 @@
           "desc": "Certificate Scope, Finnish-Education Positioning, Non-Affiliation unless stated, and Training Recognition",
           "body": [
             "The Finland Creative Education Institute (FCEI) delivers structured Finnish-Education Capstone Certification Pathways and comprehensive institutional improvement frameworks. We provide EDUFI and FINEEC-integrated professional training, core curriculum standards, institutional architecture, and expert consultancy.",
-            "A Capstone Certification is widely used across Finnish teacher education, university programmes, and professional development pathways. It serves as a formal validation of a participant\u2019s engagement, successful completion of training requirements, and\u2014most importantly\u2014their demonstrated ability to apply learning in authentic, practical contexts. The exact emphasis varies by programme, ranging from recognition of participation to evidence-based demonstration of professional competence.",
+            "A Capstone Certification is widely used across Finnish teacher education, university programmes, and professional development pathways. It serves as a formal validation of a participant’s engagement, successful completion of training requirements, and—most importantly—their demonstrated ability to apply learning in authentic, practical contexts. The exact emphasis varies by programme, ranging from recognition of participation to evidence-based demonstration of professional competence.",
             "Institutional & Regulatory Notice: Within the Finnish education ecosystem, official teaching qualifications are structurally embedded within academic degrees awarded exclusively by accredited universities, while the recognition of foreign qualifications is managed solely by the Finnish National Agency for Education (EDUFI).",
             "Accordingly, Capstone Certificates serve as advanced professional development credentials, documenting high-level training and demonstrated competence aligned with core Finnish education principles. They represent rigorous, practice-based mastery but do not constitute a formal teaching licence, state-issued qualification, or regulated academic credit, unless explicitly specified for a particular programme track.",
-            "Recognition of Capstone Certificates varies by employer, institution, ministry, or local regulator; participants are responsible for confirming their regional compliance requirements. Ultimately, the market value of Capstone certificate is driven and strengthened by the participant\u2019s active engagement, evidence submission, and demonstrated application of institutional improvement practices."
+            "Recognition of Capstone Certificates varies by employer, institution, ministry, or local regulator; participants are responsible for confirming their regional compliance requirements. Ultimately, the market value of Capstone certificate is driven and strengthened by the participant’s active engagement, evidence submission, and demonstrated application of institutional improvement practices."
           ]
         },
         {
@@ -18923,7 +18923,7 @@
       },
       {
         "incomeGroup": "UMIC",
-        "factor": 1.0,
+        "factor": 1,
         "courseFloorUsd": 27,
         "moduleFloorUsd": 5
       },
