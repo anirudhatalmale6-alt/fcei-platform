@@ -37,10 +37,12 @@ model User {
 }
 
 model Session {
-  id        String   @id
+  id        String    @id
   userId    String
-  token     String   @unique
-  createdAt DateTime @default(now())
+  token     String    @unique
+  createdAt DateTime  @default(now())
+  expiresAt DateTime?
+  revokedAt DateTime?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -48,14 +50,18 @@ model Session {
 }
 
 model Order {
-  id        String   @id
-  userId    String
-  productId String
-  status    String   @default("PENDING")
-  amount    Int
-  currency  String   @default("GBP")
-  createdAt DateTime @default(now())
-  paidAt    DateTime?
+  id              String    @id
+  userId          String
+  productId       String
+  status          String    @default("PENDING")
+  amount          Int
+  currency        String    @default("GBP")
+  createdAt       DateTime  @default(now())
+  paidAt          DateTime?
+  stripeSessionId String?
+  country         String?
+  isPremium       Boolean?
+  finalAmount     Int?
 
   user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   payments Payment[]
@@ -80,14 +86,14 @@ model Payment {
 }
 
 model Entitlement {
-  id        String   @id
-  userId    String
-  productId String
-  status    String   @default("ACTIVE")
-  courseIds  Json     @default("[]")
-  toolkitIds Json    @default("[]")
-  access    String
-  createdAt DateTime @default(now())
+  id         String   @id
+  userId     String
+  productId  String
+  status     String   @default("ACTIVE")
+  courseIds   Json     @default("[]")
+  toolkitIds Json     @default("[]")
+  access     String
+  createdAt  DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -107,22 +113,22 @@ model Enrolment {
 }
 
 model Progress {
-  id                      String   @id
-  userId                  String
-  courseId                 String
-  moduleId                String
-  status                  String   @default("NOT_STARTED")
-  percent                 Int      @default(0)
-  updatedAt               DateTime @default(now())
-  contentOpened           Boolean  @default(false)
-  resourcesAccessed       Boolean  @default(false)
-  quizPassed              Boolean  @default(false)
-  actionTaskSubmitted     Boolean  @default(false)
-  evidenceSubmitted       Boolean  @default(false)
-  reflectionSubmitted     Boolean  @default(false)
-  transferabilitySubmitted Boolean @default(false)
-  checklistCompleted      Boolean  @default(false)
-  completedAt             DateTime?
+  id                       String    @id
+  userId                   String
+  courseId                  String
+  moduleId                 String
+  status                   String    @default("NOT_STARTED")
+  percent                  Int       @default(0)
+  updatedAt                DateTime  @default(now())
+  contentOpened            Boolean   @default(false)
+  resourcesAccessed        Boolean   @default(false)
+  quizPassed               Boolean   @default(false)
+  actionTaskSubmitted      Boolean   @default(false)
+  evidenceSubmitted        Boolean   @default(false)
+  reflectionSubmitted      Boolean   @default(false)
+  transferabilitySubmitted Boolean   @default(false)
+  checklistCompleted       Boolean   @default(false)
+  completedAt              DateTime?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -212,6 +218,10 @@ model Certificate {
   courseId   String
   issuedAt  DateTime @default(now())
   pdfUrl    String?
+  status    String?
+  verificationCode String?
+  learnerName String?
+  courseTitle String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
