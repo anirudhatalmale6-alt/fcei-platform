@@ -19,3 +19,4 @@ Thumbs.db
 
 # PM2
 ecosystem.config.js
+node_modules/

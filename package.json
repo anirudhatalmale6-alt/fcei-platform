@@ -5,5 +5,9 @@
   "scripts": {
     "start": "node server.mjs",
     "test:flow": "node tests/acceptance-flow.mjs"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "prisma": "^6.19.3"
   }
 }

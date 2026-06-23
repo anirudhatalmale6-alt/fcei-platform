@@ -1,0 +1,296 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         String   @default("LEARNER")
+  createdAt    DateTime @default(now())
+
+  sessions                 Session[]
+  orders                   Order[]
+  payments                 Payment[]
+  entitlements             Entitlement[]
+  enrolments               Enrolment[]
+  progress                 Progress[]
+  resourceAccess           ResourceAccess[]
+  quizAttempts             QuizAttempt[]
+  actionTasks              ActionTask[]
+  evidenceSubmissions      EvidenceSubmission[]
+  reflections              Reflection[]
+  transferabilityResponses TransferabilityResponse[]
+  certificates             Certificate[]
+  toolkitDownloads         ToolkitDownload[]
+  bookings                 Booking[]
+  cookieConsents           CookieConsent[]
+  auditLogs                AuditLog[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id
+  userId    String
+  token     String   @unique
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model Order {
+  id        String   @id
+  userId    String
+  productId String
+  status    String   @default("PENDING")
+  amount    Int
+  currency  String   @default("GBP")
+  createdAt DateTime @default(now())
+  paidAt    DateTime?
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  payments Payment[]
+
+  @@map("orders")
+}
+
+model Payment {
+  id        String   @id
+  orderId   String
+  userId    String
+  status    String
+  amount    Int
+  currency  String   @default("GBP")
+  provider  String
+  createdAt DateTime @default(now())
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("payments")
+}
+
+model Entitlement {
+  id        String   @id
+  userId    String
+  productId String
+  status    String   @default("ACTIVE")
+  courseIds  Json     @default("[]")
+  toolkitIds Json    @default("[]")
+  access    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("entitlements")
+}
+
+model Enrolment {
+  id        String   @id
+  userId    String
+  courseId   String
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("enrolments")
+}
+
+model Progress {
+  id                      String   @id
+  userId                  String
+  courseId                 String
+  moduleId                String
+  status                  String   @default("NOT_STARTED")
+  percent                 Int      @default(0)
+  updatedAt               DateTime @default(now())
+  contentOpened           Boolean  @default(false)
+  resourcesAccessed       Boolean  @default(false)
+  quizPassed              Boolean  @default(false)
+  actionTaskSubmitted     Boolean  @default(false)
+  evidenceSubmitted       Boolean  @default(false)
+  reflectionSubmitted     Boolean  @default(false)
+  transferabilitySubmitted Boolean @default(false)
+  checklistCompleted      Boolean  @default(false)
+  completedAt             DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("progress")
+}
+
+model ResourceAccess {
+  id         String   @id
+  userId     String
+  moduleId   String
+  resourceId String
+  at         DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("resource_access")
+}
+
+model QuizAttempt {
+  id       String   @id
+  userId   String
+  moduleId String
+  answers  Json     @default("[]")
+  passed   Boolean  @default(false)
+  at       DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("quiz_attempts")
+}
+
+model ActionTask {
+  id          String   @id
+  userId      String
+  moduleId    String
+  text        String
+  submittedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("action_tasks")
+}
+
+model EvidenceSubmission {
+  id          String   @id
+  userId      String
+  moduleId    String
+  title       String
+  text        String
+  files       Json     @default("[]")
+  status      String   @default("SUBMITTED")
+  submittedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("evidence_submissions")
+}
+
+model Reflection {
+  id          String   @id
+  userId      String
+  moduleId    String
+  text        String
+  submittedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("reflections")
+}
+
+model TransferabilityResponse {
+  id          String   @id
+  userId      String
+  moduleId    String
+  responses   Json     @default("{}")
+  complete    Boolean  @default(false)
+  submittedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("transferability_responses")
+}
+
+model Certificate {
+  id        String   @id
+  userId    String
+  courseId   String
+  issuedAt  DateTime @default(now())
+  pdfUrl    String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("certificates")
+}
+
+model ToolkitDownload {
+  id        String   @id
+  userId    String
+  toolkitId String
+  at        DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("toolkit_downloads")
+}
+
+model Booking {
+  id        String   @id
+  name      String
+  email     String
+  service   String
+  notes     String?
+  createdAt DateTime @default(now())
+  status    String   @default("NEW")
+  userId    String?
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@map("bookings")
+}
+
+model ScormRegistration {
+  id        String   @id
+  userId    String
+  lessonId  String
+  status    String   @default("NOT_STARTED")
+  createdAt DateTime @default(now())
+
+  @@map("scorm_registrations")
+}
+
+model ScormRuntime {
+  id             String   @id
+  registrationId String
+  data           Json     @default("{}")
+  updatedAt      DateTime @default(now())
+
+  @@map("scorm_runtime")
+}
+
+model CmsPage {
+  id      String @id
+  slug    String @unique
+  content Json   @default("{}")
+
+  @@map("cms_pages")
+}
+
+model CookieConsent {
+  id     String   @id
+  choice String
+  ip     String
+  at     DateTime @default(now())
+  userId String?
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@map("cookie_consent")
+}
+
+model AuditLog {
+  id       String   @id
+  action   String
+  actorId  String?
+  meta     Json     @default("{}")
+  at       DateTime @default(now())
+
+  user User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@map("audit_logs")
+}
