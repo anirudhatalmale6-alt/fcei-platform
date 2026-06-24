@@ -1,0 +1,43 @@
+{
+  "course_id": "C01",
+  "course_title": "Foundations of Finnish-Inspired Education",
+  "module_id": "C01-M05",
+  "module_title": "Local Adaptation of Finnish Principles",
+  "course_price_usd": 19,
+  "downloadable_title": "Local Adaptation of Finnish Principles - Professional Downloadable Toolkit",
+  "downloadable_sku": "FCEI-DL-C01-M05-LOCAL_ADAPTATION_OF_FINN",
+  "framework_focus": "values-to-practice",
+  "core_terms": "equity, trust, wellbeing, professional judgement and evidence-informed improvement",
+  "intended_users": "teachers, educators and facilitators",
+  "short_explanation": "This downloadable toolkit supports Local Adaptation of Finnish Principles within Foundations of Finnish-Inspired Education. It helps participants translate Finnish education principles into a reusable professional artefact, not simply complete a reading activity.",
+  "okm_framing": "The resource connects classroom, leadership and institutional development to the wider Ministry of Education and Culture policy context: education improvement should be planned as part of system development, quality, inclusion, research-informed practice and public responsibility.",
+  "edufi_framing": "The resource uses EDUFI-aligned wording by treating curriculum and learning design as a common foundation that supports equality while allowing local adaptation. Participants connect national-level principles to local curriculum, school culture, pedagogy and learner experience.",
+  "fineec_framing": "The resource uses FINEEC-benchmarked wording by applying enhancement-led development: participation, trust, learning, appreciation, strengths, development targets and impact. Evidence is used to improve practice, not to blame individuals.",
+  "key_definitions": {
+    "principle": "the educational value or idea being made visible in practice",
+    "problem": "the real learning, teaching, leadership, curriculum or institutional challenge being addressed",
+    "tool": "the template, routine, planning document, dialogue structure or evidence instrument used to respond to the challenge",
+    "evidence": "visible proof that the action has been applied, reviewed and connected to improvement",
+    "improvement_cycle": "identify priority, plan action, implement, collect evidence, reflect, adjust and decide the next step",
+    "enhancement_led_development": "a participatory, trust-based improvement approach focused on learning, strengths, development targets and impact"
+  },
+  "meaning_in_practice": "In practice, participants use the toolkit to identify one priority related to Local Adaptation of Finnish Principles, choose a manageable action, complete the professional template, collect evidence and decide what should improve next.",
+  "downloadable_fields": [
+    "Context and role",
+    "Priority or problem statement",
+    "EDUFI-aligned principle in action",
+    "FINEEC-benchmarked evidence focus",
+    "Action steps",
+    "Evidence source",
+    "Stakeholder or learner voice",
+    "Reflection and next improvement decision"
+  ],
+  "evidence_requirement": "principle-to-practice evidence, action notes and improvement decision",
+  "model_example": "A participant notices that local adaptation of finnish principles is discussed in general terms but is not yet visible in daily practice. They complete the toolkit by selecting one priority, designing a focused action, collecting one piece of evidence, and writing a next-step improvement decision.",
+  "reflection_prompt": "What changed in practice after using this Local Adaptation of Finnish Principles resource? What evidence supports your judgement? What should be continued, adapted, scaled or redesigned?",
+  "certificate_rule": "The downloadable evidence is complete when the participant submits a filled Local Adaptation of Finnish Principles - Professional Downloadable Toolkit, includes evidence connected to principle-to-practice evidence, action notes and improvement decision, and writes one improvement decision aligned to the FCEI Finnish Teacher Training Development Framework.",
+  "file_docx": "docs/by_course/C01_local-adaptation-of-finnish-principles_professional_downloadables_v3.docx",
+  "file_pdf": "pdf/by_course/C01_local-adaptation-of-finnish-principles_professional_downloadables_v3.pdf",
+  "editable_md": "editables/markdown_by_module/C01-M05_local-adaptation-of-finnish-principles_downloadable_template_v3.md",
+  "editable_json": "editables/json_by_module/C01-M05_local-adaptation-of-finnish-principles_downloadable_template_v3.json"
+}
