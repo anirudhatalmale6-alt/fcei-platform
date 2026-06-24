@@ -187,7 +187,7 @@ const PREMIUM_COUNTRIES = new Set([
   'PL','CZ','SK','HU','RO','BG','HR','SI','EE','LV','LT','GR','CY','MT',
   'US','CA','MX','AU','NZ','SG','SA','AE','OM','QA','BH','KW','CN','HK','MO','TW','JP','KR'
 ]);
-const PREMIUM_SURCHARGE = 2000;
+const PREMIUM_SURCHARGE = 0;
 function getClientIp(req) {
   return (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress || '';
 }
