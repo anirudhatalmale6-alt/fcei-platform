@@ -691,6 +691,60 @@ footer{background:var(--fjord-2);color:#b7cace;padding:clamp(48px,6vw,72px) 0 30
 .cert-actions button{background:var(--spruce,#0a5a3a);color:#fff;border:none;padding:12px 28px;font-size:15px;border-radius:8px;cursor:pointer;margin:0 8px}
 .cert-actions button:hover{opacity:.85}
 @media print{.cert-page{background:#fff;padding:0}.cert-frame{box-shadow:none;width:210mm;height:297mm}.cert-actions{display:none}.section,.site-header{display:none!important}}
+
+/* ── Blog ──────────────────────────────────────────────────────────── */
+.fcei-blog-page,.fcei-blog-article{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter) 64px}
+.fcei-blog-hero{background:linear-gradient(135deg,rgba(28,122,94,.12),rgba(28,122,94,.03));border:1px solid rgba(28,122,94,.25);border-radius:var(--radius);padding:clamp(32px,5vw,56px) clamp(20px,4vw,42px);margin-bottom:28px}
+.fcei-blog-hero h1{font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.04;letter-spacing:-.04em;margin:0;color:var(--ink);max-width:920px}
+.fcei-blog-hero p:last-child{color:var(--ink-2);font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.6;max-width:780px;margin:14px 0 0}
+.fcei-blog-toolbar{display:flex;gap:18px;align-items:end;justify-content:space-between;margin:24px 0 28px;flex-wrap:wrap}
+.fcei-blog-search{flex:1 1 320px;display:grid;gap:6px;color:var(--ink-3);font-weight:600;font-size:.82rem}
+.fcei-blog-search input{border:1px solid var(--line);border-radius:999px;padding:11px 18px;font:inherit;outline:none;font-size:.95rem}
+.fcei-blog-search input:focus{border-color:var(--spruce);box-shadow:0 0 0 3px rgba(28,122,94,.15)}
+.fcei-blog-categories{display:flex;flex-wrap:wrap;gap:8px}
+.fcei-blog-categories button{border:1px solid var(--line);background:var(--snow);color:var(--ink);padding:8px 14px;border-radius:999px;font-weight:600;cursor:pointer;font-size:.85rem;font-family:var(--body)}
+.fcei-blog-categories button.active,.fcei-blog-categories button:hover{background:var(--fjord);color:var(--snow);border-color:var(--fjord)}
+.fcei-blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.fcei-blog-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--snow);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:box-shadow .25s var(--ease)}
+.fcei-blog-card:hover{box-shadow:var(--shadow)}
+.fcei-blog-card__img{display:block;background:var(--mist);aspect-ratio:16/10;overflow:hidden}
+.fcei-blog-card__img img{width:100%;height:100%;object-fit:cover;display:block}
+.fcei-blog-card__body{padding:20px;display:flex;flex-direction:column;flex:1}
+.fcei-blog-card__meta{display:flex;gap:8px;flex-wrap:wrap;color:var(--ink-3);font-weight:600;font-size:.8rem;font-family:var(--mono);letter-spacing:.02em}
+.fcei-blog-card__title{font-family:var(--display);font-size:1.22rem;line-height:1.18;letter-spacing:-.02em;margin:10px 0;font-weight:600}
+.fcei-blog-card__title a{color:var(--ink);text-decoration:none}
+.fcei-blog-card__title a:hover{color:var(--spruce)}
+.fcei-blog-card__excerpt{color:var(--ink-2);line-height:1.55;margin:0 0 16px;font-size:.92rem}
+.fcei-blog-card__link{margin-top:auto;color:var(--ink);font-weight:700;text-decoration:none;font-size:.88rem}
+.fcei-blog-card__link::after{content:" \2192";color:var(--spruce)}
+.fcei-blog-empty{border:1px dashed var(--line);border-radius:var(--radius);padding:28px;color:var(--ink-3);text-align:center}
+.fcei-blog-back{display:inline-block;margin-bottom:16px;color:var(--ink-3);font-weight:700;text-decoration:none;font-size:.88rem}
+.fcei-blog-back:hover{color:var(--spruce)}
+.fcei-blog-article{max-width:820px}
+.fcei-blog-article__header{margin-bottom:24px}
+.fcei-blog-article__heroimg{aspect-ratio:16/8;border-radius:var(--radius);background:var(--mist);margin:8px 0 32px;overflow:hidden}
+.fcei-blog-article__heroimg img{width:100%;height:100%;object-fit:cover;display:block}
+.fcei-blog-article__content{font-size:1.05rem;line-height:1.78}
+.fcei-blog-article__content h2{font-family:var(--display);font-size:clamp(1.5rem,2.5vw,2rem);line-height:1.12;letter-spacing:-.03em;color:var(--ink);margin:40px 0 16px}
+.fcei-blog-article__content h3{font-family:var(--display);font-size:1.25rem;margin:28px 0 12px}
+.fcei-blog-article__content strong{color:var(--ink)}
+.fcei-blog-article__content ul,.fcei-blog-article__content ol{padding-left:24px;margin:12px 0}
+.fcei-blog-article__content li{margin-bottom:6px}
+.fcei-blog-article__content blockquote{border-left:3px solid var(--spruce);padding:12px 20px;margin:20px 0;background:var(--mist);border-radius:0 var(--radius-s) var(--radius-s) 0;color:var(--ink-2)}
+.fcei-blog-tags{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0}
+.fcei-blog-tags span{background:rgba(28,122,94,.08);color:var(--ink);border:1px solid rgba(28,122,94,.18);border-radius:999px;padding:6px 12px;font-weight:600;font-size:.82rem}
+.fcei-blog-related{border-top:1px solid var(--line);padding-top:24px;margin-top:32px}
+.fcei-blog-related h3{margin:0 0 14px}
+.fcei-blog-related__grid{display:grid;gap:10px}
+.fcei-blog-related__grid a{border:1px solid var(--line);border-radius:var(--radius-s);padding:14px 18px;font-weight:700;text-decoration:none;color:var(--ink);font-size:.95rem}
+.fcei-blog-related__grid a:hover{color:var(--spruce);border-color:var(--spruce)}
+.fcei-blog-cta{margin-top:48px;background:var(--fjord);color:var(--snow);border-radius:var(--radius);padding:clamp(24px,4vw,34px);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.fcei-blog-cta h2{margin:0;font-size:clamp(1.3rem,2.5vw,1.75rem);letter-spacing:-.03em;color:var(--snow)}
+.fcei-blog-cta p{color:rgba(255,255,255,.7);margin:8px 0 0}
+.fcei-blog-cta__btn{background:var(--mint);color:var(--fjord-2);text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:700;white-space:nowrap;font-size:.92rem}
+@media(max-width:900px){.fcei-blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fcei-blog-cta{flex-direction:column;align-items:flex-start}}
+@media(max-width:640px){.fcei-blog-grid{grid-template-columns:1fr}.fcei-blog-toolbar{align-items:stretch}.fcei-blog-categories{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}}
+
 </style>
 <script src="https://player.vimeo.com/api/player.js"></script>
 <link rel="canonical" href="https://fcei.eu">
@@ -914,6 +968,7 @@ window.__FCEI__ = {
     { href: '#/catalogue', label: 'Courses' },
     { href: '#/tvet', label: 'TVET' },
     { href: '#/consultancy', label: 'Consultancy' },
+    { href: '#/blog', label: 'Blog' },
     { href: '#/resources', label: 'Resources' },
     { href: '#/legal', label: 'Legal' }
   ];
@@ -957,7 +1012,7 @@ window.__FCEI__ = {
       '</div>';
     var col2 = footCol('Explore', [
       ['#/catalogue', 'Course catalogue'], ['#/tvet', 'TVET modules'],
-      ['#/consultancy', 'Consultancy'], ['#/resources', 'Resource hub']
+      ['#/consultancy', 'Consultancy'], ['#/blog', 'Blog'], ['#/resources', 'Resource hub']
     ]);
     var col3 = footCol('Institute', [
       ['#/booking', 'Request a demo'], ['#/dashboard', 'Learner dashboard'],
@@ -2170,6 +2225,114 @@ window.__FCEI__ = {
 
   /* ---- admin ------------------------------------------------------------- */
 
+
+  /* ---- blog -------------------------------------------------------------- */
+  function mdToHtml(md) {
+    if (!md) return '';
+    return md
+      .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+      .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+      .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/^- (.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*<\/li>)/s, function(m) { return '<ul>' + m + '</ul>'; })
+      .replace(/(?:<\/li>\n)(?!<li>)/g, '</li></ul>\n')
+      .replace(/(?<!<\/li>|<\/ul>|<\/h[1-3]>|<\/blockquote>)\n(<li>)/g, '\n<ul>$1')
+      .replace(/^(?!<[hulo]|<li|<bl|<str|<em|$)(.+)$/gm, '<p>$1</p>')
+      .replace(/<p><\/p>/g, '')
+      .replace(/\n{2,}/g, '\n');
+  }
+
+  function pageBlog() {
+    api('/api/blog/posts').then(function (r) {
+      if (!r.ok) { mount(notFound('Blog not available')); return; }
+      var posts = r.data.posts || [];
+      var cats = ['All'];
+      posts.forEach(function (p) { if (p.category && cats.indexOf(p.category) === -1) cats.push(p.category); });
+
+      var head = '<div class="fcei-blog-page">' +
+        '<div class="fcei-blog-hero">' +
+          '<span class="eyebrow on-dark" style="color:var(--spruce)">FCEI INSIGHTS</span>' +
+          '<h1>Ideas for teachers, leaders and schools</h1>' +
+          '<p>Practical articles on classroom equity, formative assessment, learner agency, TVET competence and school improvement through the FCEI Finnish Teacher Training Development Framework.</p>' +
+        '</div>';
+
+      var toolbar = '<div class="fcei-blog-toolbar">' +
+        '<div class="fcei-blog-search"><label>Search articles</label><input id="blog-search" type="text" placeholder="Search by title, keyword or tag..."></div>' +
+        '<div class="fcei-blog-categories" id="blog-cats">' +
+        cats.map(function (c) { return '<button data-cat="' + esc(c) + '"' + (c === 'All' ? ' class="active"' : '') + '>' + esc(c) + '</button>'; }).join('') +
+        '</div></div>';
+
+      function renderCards(list) {
+        if (!list.length) return '<div class="fcei-blog-empty">No articles match your search.</div>';
+        return '<div class="fcei-blog-grid">' + list.map(function (p) {
+          return '<article class="fcei-blog-card">' +
+            '<div class="fcei-blog-card__img"><div style="width:100%;height:100%;background:var(--mist);display:flex;align-items:center;justify-content:center;color:var(--ink-3);font-size:.85rem">' + esc(p.category) + '</div></div>' +
+            '<div class="fcei-blog-card__body">' +
+              '<div class="fcei-blog-card__meta"><span>' + esc(p.category) + '</span><span>\u00b7</span><span>' + esc(p.readTime) + '</span></div>' +
+              '<h3 class="fcei-blog-card__title"><a href="#/blog/' + esc(p.slug) + '">' + esc(p.title) + '</a></h3>' +
+              '<p class="fcei-blog-card__excerpt">' + esc(p.excerpt) + '</p>' +
+              '<a href="#/blog/' + esc(p.slug) + '" class="fcei-blog-card__link">Read article</a>' +
+            '</div></article>';
+        }).join('') + '</div>';
+      }
+
+      var cta = '<div class="fcei-blog-cta"><div><span class="eyebrow on-dark" style="color:var(--mint)">PROFESSIONAL LEARNING</span><h2>Ready to put these ideas into practice?</h2><p>Explore FCEI courses and earn your Capstone Certificate.</p></div><a href="#/catalogue" class="fcei-blog-cta__btn">View courses</a></div>';
+
+      mount(head + toolbar + '<div id="blog-grid">' + renderCards(posts) + '</div>' + cta + '</div>');
+
+      var allPosts = posts;
+      var activeCat = 'All';
+      var searchTerm = '';
+
+      function filterPosts() {
+        var filtered = allPosts.filter(function (p) {
+          var matchCat = activeCat === 'All' || p.category === activeCat;
+          var matchSearch = !searchTerm || p.title.toLowerCase().indexOf(searchTerm) > -1 || p.excerpt.toLowerCase().indexOf(searchTerm) > -1 || (p.tags || []).some(function (t) { return t.toLowerCase().indexOf(searchTerm) > -1; });
+          return matchCat && matchSearch;
+        });
+        document.getElementById('blog-grid').innerHTML = renderCards(filtered);
+      }
+
+      document.getElementById('blog-search').oninput = function (e) {
+        searchTerm = e.target.value.toLowerCase().trim();
+        filterPosts();
+      };
+      document.getElementById('blog-cats').onclick = function (e) {
+        if (e.target.tagName !== 'BUTTON') return;
+        activeCat = e.target.getAttribute('data-cat');
+        document.querySelectorAll('#blog-cats button').forEach(function (b) { b.classList.remove('active'); });
+        e.target.classList.add('active');
+        filterPosts();
+      };
+    });
+  }
+
+  function pageBlogArticle(slug) {
+    api('/api/blog/posts/' + slug).then(function (r) {
+      if (!r.ok) { mount(notFound('Article not found')); return; }
+      var post = r.data.post;
+      var bodyHtml = mdToHtml(post.body || '');
+
+      var header = '<div class="fcei-blog-article">' +
+        '<a href="#/blog" class="fcei-blog-back">\u2190 Back to all articles</a>' +
+        '<div class="fcei-blog-article__header">' +
+          '<span class="eyebrow" style="color:var(--spruce)">' + esc(post.category) + '</span>' +
+          '<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.08;letter-spacing:-.03em;margin:8px 0 0">' + esc(post.title) + '</h1>' +
+          '<p style="color:var(--ink-2);font-size:1.05rem;margin:14px 0 0;max-width:680px">' + esc(post.excerpt) + '</p>' +
+          '<div class="fcei-blog-card__meta" style="margin-top:16px"><span>' + esc(post.author) + '</span><span>\u00b7</span><span>' + esc(post.date) + '</span><span>\u00b7</span><span>' + esc(post.readTime) + '</span></div>' +
+        '</div>';
+
+      var tags = '<div class="fcei-blog-tags">' + (post.tags || []).map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('') + '</div>';
+
+      var cta = '<div class="fcei-blog-cta"><div><span class="eyebrow on-dark" style="color:var(--mint)">EXPLORE FURTHER</span><h2>Take the next step in your professional learning</h2><p>Join an FCEI course and apply these ideas in your own classroom.</p></div><a href="#/catalogue" class="fcei-blog-cta__btn">View courses</a></div>';
+
+      mount(header + '<div class="fcei-blog-article__content">' + bodyHtml + '</div>' + tags + cta + '</div>');
+      window.scrollTo(0, 0);
+    });
+  }
+
   /* ---- admin SEO keyword engine ----------------------------------------- */
   function pageSeoEngine() {
     var head = sectionHead('Admin', 'SEO Keyword Discovery Engine',
@@ -2682,6 +2845,8 @@ window.__FCEI__ = {
     [/^#\/legal$/, function () { pageLegal(); }],
     [/^#\/stripe-success/, function () { pageStripeSuccess(); }],
     [/^#\/certificate\/(.+)$/, function (m) { pageCertificate(m[1]); }],
+    [/^#\/blog$/, function () { pageBlog(); }],
+    [/^#\/blog\/(.+)$/, function (m) { pageBlogArticle(m[1]); }],
     [/^#\/admin\/seo$/, function () { pageSeoEngine(); }],
     [/^#\/admin$/, function () { pageAdmin(); }]
   ];

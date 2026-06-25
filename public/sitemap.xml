@@ -157,4 +157,35 @@
     <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://fcei.eu/blog</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/blog/what-does-equity-look-like-in-a-lesson</loc>
+    <lastmod>2026-06-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/blog/why-small-trials-reduce-risk-in-school-improvement</loc>
+    <lastmod>2026-06-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/blog/how-to-turn-a-tvet-topic-into-an-observable-work-task</loc>
+    <lastmod>2026-06-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/blog/what-evidence-should-teachers-collect-before-changing-a-routine</loc>
+    <lastmod>2026-06-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/blog/how-learner-agency-can-be-designed-without-losing-structure</loc>
+    <lastmod>2026-06-25</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>

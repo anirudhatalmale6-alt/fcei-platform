@@ -12,6 +12,7 @@ import { FCEI_COURSES, FCEI_COURSE_MAP, FCEI_CONTENT_GAPS, generateKeywords, cre
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT || 8787);
 const SEED_PATH = path.join(__dirname, 'data', 'seed.json');
+const BLOG_DATA = JSON.parse(fs.readFileSync(path.join(__dirname,'data','blog.seed.json'),'utf8'));
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const UPLOAD_DIR = path.join(__dirname, 'storage', 'uploads');
 const CERT_DIR = path.join(__dirname, 'storage', 'certificates');
@@ -788,6 +789,20 @@ if(req.method==='GET' && pathname==='/api/admin/communications'){
     }
 
 
+
+    // --- Blog API ---
+    if(req.method==='GET' && pathname==='/api/blog/posts'){
+      const posts=(BLOG_DATA.posts||[]).filter(p=>p.status!=='draft').map(p=>({id:p.id,title:p.title,slug:p.slug,category:p.category,author:p.author,date:p.date,readTime:p.readTime,excerpt:p.excerpt,tags:p.tags,heroImage:p.heroImage}));
+      return sendJson(res,200,{posts},req);
+    }
+
+    if(req.method==='GET' && pathname.match(/^\/api\/blog\/posts\/[^/]+$/)){
+      const slug=decodeURIComponent(pathname.split('/').pop());
+      const post=(BLOG_DATA.posts||[]).find(p=>p.slug===slug);
+      if(!post)return bad(res,'Post not found',404);
+      return sendJson(res,200,{post},req);
+    }
+
     // --- SEO Keyword Engine API ---
     if(req.method==='POST' && pathname==='/api/seo/generate-keywords'){
       const admin=await requireAdmin(req,res); if(!admin)return;
@@ -833,6 +848,22 @@ const server=http.createServer(async(req,res)=>{ const {path:pathname,query}=par
         const raw=fs.readFileSync(path.join(PUBLIC_DIR,'index.html'),'utf8');
         const jsonld=landing.schemaType==='Course'&&landing.courseCode?JSON.stringify({"@context":"https://schema.org","@type":"Course","name":landing.h1,"description":landing.desc,"provider":{"@type":"Organization","name":"Finland Creative Education Institute","sameAs":"https://fcei.eu"},"educationalCredentialAwarded":"FCEI Capstone Certificate","courseMode":"online","url":"https://fcei.eu/"+slug}):landing.schemaType==='ProfessionalService'?JSON.stringify({"@context":"https://schema.org","@type":"ProfessionalService","name":"FCEI School Improvement Consultancy","description":landing.desc,"provider":{"@type":"Organization","name":"Finland Creative Education Institute","sameAs":"https://fcei.eu"},"areaServed":"Global"}):ORG_JSONLD;
         const out=injectSEO(raw,{title:landing.title,desc:landing.desc,ogTitle:landing.title,ogDesc:landing.desc,canonical:'https://fcei.eu/'+slug,jsonld}).replace('</body>','<script>if(!location.hash)location.hash="'+landing.hash+'";<\/script></body>');
+        res.writeHead(200,{'Content-Type':'text/html;charset=utf-8','Cache-Control':'public,max-age=3600'}); res.end(out); return;
+      }
+    }
+
+    if(pathname==='/blog'){
+      const raw=fs.readFileSync(path.join(PUBLIC_DIR,'index.html'),'utf8');
+      const out=injectSEO(raw,{title:'FCEI Insights Blog',desc:'Practical classroom and school-improvement articles for teachers, leaders and professional learning teams.',ogTitle:'FCEI Insights Blog',ogDesc:'Practical classroom and school-improvement articles for teachers, leaders and professional learning teams.',canonical:'https://fcei.eu/blog'}).replace('</body>','<script>if(!location.hash)location.hash="#/blog";<\/script></body>');
+      res.writeHead(200,{'Content-Type':'text/html;charset=utf-8','Cache-Control':'public,max-age=3600'}); res.end(out); return;
+    }
+    if(pathname.startsWith('/blog/')){
+      const slug=pathname.replace('/blog/','').replace(/\/$/,'');
+      const post=(BLOG_DATA.posts||[]).find(p=>p.slug===slug);
+      if(post){
+        const raw=fs.readFileSync(path.join(PUBLIC_DIR,'index.html'),'utf8');
+        const articleJsonld=JSON.stringify({"@context":"https://schema.org","@type":"BlogPosting","headline":post.title,"description":post.excerpt,"author":{"@type":"Organization","name":"Finland Creative Education Institute"},"datePublished":post.date,"publisher":{"@type":"Organization","name":"Finland Creative Education Institute","url":"https://fcei.eu"}});
+        const out=injectSEO(raw,{title:post.title+' | FCEI Insights',desc:post.excerpt,ogTitle:post.title+' | FCEI Insights',ogDesc:post.excerpt,canonical:'https://fcei.eu/blog/'+slug,jsonld:articleJsonld}).replace('</body>','<script>if(!location.hash)location.hash="#/blog/'+slug+'";<\/script></body>');
         res.writeHead(200,{'Content-Type':'text/html;charset=utf-8','Cache-Control':'public,max-age=3600'}); res.end(out); return;
       }
     }
