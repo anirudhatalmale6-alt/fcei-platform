@@ -9883,7 +9883,7 @@
         },
         {
           "term": "Self-evaluation",
-          "definition": "A school or institution’s structured review of its own practice using evidence, staff reflection, learner voice and improvement priorities."
+          "definition": "A school or institution\u2019s structured review of its own practice using evidence, staff reflection, learner voice and improvement priorities."
         },
         {
           "term": "Evidence-informed leadership",
@@ -10040,8 +10040,8 @@
       "shortExplanation": "EDUFI/FINEEC framing: This FCEI module turns Quality Culture and Trust into a practical, evidence-led task within the Finnish Teacher Training Development Framework. EDUFI alignment: local curriculum adaptation, equality, learner participation and support. FINEEC benchmarking: enhancement-led evaluation, self-assessment and quality management. In FCEI practice, the participant is not only reading a course page; they are building a reusable professional artefact. The module defines the principle, names the real leadership or institutional problem without blame, applies Quality Culture Audit, collects evidence such as self-evaluation note, evidence meeting record, 90-day improvement plan, completed task sheet, template output, reflection or demonstration record, and uses the improvement cycle to decide the next step. Final deliverable: a completed Quality Culture and Trust implementation pack containing a problem statement, practical tool selection, implementation steps, evidence record, reflection and improvement decision.",
       "description": "This module introduces school leadership, quality culture and enhancement-led development as practical leadership responsibilities within the FCEI Finnish Teacher Training Development Framework. Participants learn how leaders can build trust, shared responsibility, professional dialogue, evidence-informed improvement and learner-centred decision-making across a school, college or education team.",
       "learnerPhrasing": "In this module, you will explore how school leadership can strengthen quality culture and support enhancement-led development. You will learn how to identify a leadership priority, use evidence responsibly, involve staff or learners, plan an improvement action and produce a practical leadership artefact for your professional evidence portfolio.",
-      "evidenceRequirement": "Participants must submit one leadership improvement artefact showing priority, evidence, leadership action, staff or learner participation, reflection and improvement decision. The evidence must show the link: priority → evidence → leadership action → reflection → improvement decision.",
-      "reflectionPrompt": "What leadership priority did you identify? What evidence helped you understand the issue? How did the process support trust, participation or professional dialogue? What did you learn about your institution’s quality culture? What is the next improvement step?",
+      "evidenceRequirement": "Participants must submit one leadership improvement artefact showing priority, evidence, leadership action, staff or learner participation, reflection and improvement decision. The evidence must show the link: priority \u2192 evidence \u2192 leadership action \u2192 reflection \u2192 improvement decision.",
+      "reflectionPrompt": "What leadership priority did you identify? What evidence helped you understand the issue? How did the process support trust, participation or professional dialogue? What did you learn about your institution\u2019s quality culture? What is the next improvement step?",
       "certificateRule": "The module is complete when the participant opens the content, watches or opens the learning video, downloads at least one core template, completes the knowledge check, submits the action task, uploads a leadership improvement artefact and completes the reflection prompt.",
       "certificateStatement": "The participant has completed School Leadership, Quality Culture and Enhancement-Led Development within the FCEI Finnish Teacher Training Development Framework and has submitted evidence of leadership reflection, quality culture review and enhancement-led improvement planning."
     },
@@ -17342,7 +17342,7 @@
       "brandHeader": "FCEI Finnish Creative Education",
       "institutionName": "Finland Creative Education Institute",
       "strapline": "Research-informed teacher training inspired by Finnish education principles.",
-      "topLine": "Finland Creative Education Institute Courses · TVET · Consultancy · Workshops",
+      "topLine": "Finland Creative Education Institute Courses \u00b7 TVET \u00b7 Consultancy \u00b7 Workshops",
       "searchHint": "Try assessment, mixed-ability, TVET, leadership or a course code like C4-M02.",
       "footerNotice": "Not an official Finnish government certification unless separately accredited or approved."
     },
@@ -17350,9 +17350,9 @@
       "primaryCta": "Find Courses",
       "secondaryCta": "Learner Login",
       "enquireCta": "Enquire Now",
-      "searchTitle": "Find Courses · 18 areas",
+      "searchTitle": "Find Courses \u00b7 18 areas",
       "noMatches": "No matches. Show everything",
-      "browse": "Browse all courses → Finnish Curriculum Framework"
+      "browse": "Browse all courses \u2192 Finnish Curriculum Framework"
     },
     "findCourse": {
       "title": "Find Your Course",
@@ -18048,19 +18048,19 @@
       "brandShort": "FCEI",
       "brandHeader": "FCEI Finnish Creative Education",
       "institutionName": "Finland Creative Education Institute",
-      "topLine": "Finland Creative Education Institute · Courses · TVET · Consultancy · Workshops",
+      "topLine": "Finland Creative Education Institute \u00b7 Courses \u00b7 TVET \u00b7 Consultancy \u00b7 Workshops",
       "metaDescription": "Built upon EDUFI and FINEEC-aligned, enhancement-led practices and evidence-based capacity building, our expert consultancy guides school leaders and parents while providing comprehensive teacher development, helping stakeholders make informed, future-focused decisions for their learners.",
       "footerAbout": "Finland Creative Education Institute. Research-informed teacher training shaping the future of global education. Our Capstone Certification confirms alignment with the rigorous educational benchmarks and quality criteria set by EDUFI and FINEEC. In the Finnish education system, official teaching qualifications are embedded directly within university academic degrees, a standard of excellence that underpins every FCEI pathway.",
       "footerNotice": "",
-      "searchHint": "Try “assessment”, “mixed-ability”, “TVET”, “leadership” or a course code like C4-M02.",
+      "searchHint": "Try \u201cassessment\u201d, \u201cmixed-ability\u201d, \u201cTVET\u201d, \u201cleadership\u201d or a course code like C4-M02.",
       "findCoursesLabel": "Find Courses",
-      "findCoursesAreas": "Find Courses · 18 areas",
+      "findCoursesAreas": "Find Courses \u00b7 18 areas",
       "noMatches": "No matches. Show everything",
-      "browseAll": "Browse all courses →",
+      "browseAll": "Browse all courses \u2192",
       "frameworkLink": "Finnish Curriculum Framework",
       "learnerLogin": "Learner Login",
       "enquireNow": "Enquire Now",
-      "copyright": "© 2026 Finland Creative Education Institute"
+      "copyright": "\u00a9 2026 Finland Creative Education Institute"
     },
     "catalogue": {
       "title": "FCEI Course Catalogue",
@@ -18098,24 +18098,6 @@
       "title": "Learning & Teaching Resource Hub",
       "intro": "Download classroom toolkits, diagrams, AI video scripts, implementation forms and school leadership templates.",
       "items": [
-        {
-          "tag": "PDF",
-          "title": "Full Resource Pack",
-          "desc": "Toolkits, diagrams, implementation forms, classroom resources and management protocols.",
-          "file": "/api/downloads/Finnish_Paradigm_Full_Resource_Pack.pdf"
-        },
-        {
-          "tag": "FCEI Video",
-          "title": "FCEI Video Scripts",
-          "desc": "Presenter scripts and generation prompts for interactive learning.",
-          "file": "/api/downloads/Video_Scripts_and_AI_Prompts.pdf"
-        },
-        {
-          "tag": "Toolkit",
-          "title": "Original Finnish Way Bundle",
-          "desc": "Resource pack, diagrams and classroom toolkits from the original Finnish Way concept.",
-          "file": "/api/downloads/Original_Finnish_Way_Resources_Toolkits_Diagrams.pdf"
-        },
         {
           "tag": "Checklist",
           "title": "Finnish-Pedagogy Classroom Equity Checklist",
@@ -18298,10 +18280,10 @@
           "desc": "Certificate Scope, Finnish-Education Positioning, Non-Affiliation unless stated, and Training Recognition",
           "body": [
             "The Finland Creative Education Institute (FCEI) delivers structured Finnish-Education Capstone Certification Pathways and comprehensive institutional improvement frameworks. We provide EDUFI and FINEEC-integrated professional training, core curriculum standards, institutional architecture, and expert consultancy.",
-            "A Capstone Certification is widely used across Finnish teacher education, university programmes, and professional development pathways. It serves as a formal validation of a participant’s engagement, successful completion of training requirements, and—most importantly—their demonstrated ability to apply learning in authentic, practical contexts. The exact emphasis varies by programme, ranging from recognition of participation to evidence-based demonstration of professional competence.",
+            "A Capstone Certification is widely used across Finnish teacher education, university programmes, and professional development pathways. It serves as a formal validation of a participant\u2019s engagement, successful completion of training requirements, and\u2014most importantly\u2014their demonstrated ability to apply learning in authentic, practical contexts. The exact emphasis varies by programme, ranging from recognition of participation to evidence-based demonstration of professional competence.",
             "Institutional & Regulatory Notice: Within the Finnish education ecosystem, official teaching qualifications are structurally embedded within academic degrees awarded exclusively by accredited universities, while the recognition of foreign qualifications is managed solely by the Finnish National Agency for Education (EDUFI).",
             "Accordingly, Capstone Certificates serve as advanced professional development credentials, documenting high-level training and demonstrated competence aligned with core Finnish education principles. They represent rigorous, practice-based mastery but do not constitute a formal teaching licence, state-issued qualification, or regulated academic credit, unless explicitly specified for a particular programme track.",
-            "Recognition of Capstone Certificates varies by employer, institution, ministry, or local regulator; participants are responsible for confirming their regional compliance requirements. Ultimately, the market value of Capstone certificate is driven and strengthened by the participant’s active engagement, evidence submission, and demonstrated application of institutional improvement practices."
+            "Recognition of Capstone Certificates varies by employer, institution, ministry, or local regulator; participants are responsible for confirming their regional compliance requirements. Ultimately, the market value of Capstone certificate is driven and strengthened by the participant\u2019s active engagement, evidence submission, and demonstrated application of institutional improvement practices."
           ]
         },
         {
