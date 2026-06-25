@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { PrismaClient } from '@prisma/client';
 
 try{const ef=fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)),".env"),"utf8");ef.split(String.fromCharCode(10)).forEach(l=>{const[k,...v]=l.split("=");if(k&&k.trim()&&!k.startsWith("#"))process.env[k.trim()]=v.join("=").trim();})}catch(e){}
+import { FCEI_COURSES, FCEI_COURSE_MAP, FCEI_CONTENT_GAPS, generateKeywords, createContentBrief, toCsv } from './lib/fceiSeoEngine.mjs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT || 8787);
 const SEED_PATH = path.join(__dirname, 'data', 'seed.json');
@@ -143,6 +144,20 @@ const SEO_DATA = JSON.parse(fs.readFileSync(path.join(__dirname,'data','seo.json
 const ORG_JSONLD = JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"Finland Creative Education Institute","url":"https://fcei.eu","logo":"https://fcei.eu/platform/fcei-logo.png","description":"Finnish-inspired teacher training and school improvement platform. EDUFI-aligned, FINEEC-benchmarked.","sameAs":["https://fcei.eu"]});
 
 const prisma = new PrismaClient();
+
+const SEO_LANDING_PAGES = {
+  'finnish-teacher-training-courses': { title: 'Finnish Teacher Training Courses Online | FCEI', desc: 'Finnish-inspired, EDUFI-aligned and FINEEC-benchmarked teacher training courses for educators, school leaders and institutions.', h1: 'Finnish Teacher Training Courses Online', schemaType: 'Course', courseCode: 'C01', hash: '#/catalogue' },
+  'finnish-pedagogy-course': { title: 'Finnish Pedagogy Course for Teachers | FCEI', desc: 'Learn Finnish pedagogy through the FCEI Finnish Teacher Training Development Framework. Evidence-informed, EDUFI-aligned professional learning for teachers worldwide.', h1: 'Finnish Pedagogy Course for Teachers', schemaType: 'Course', courseCode: 'C01', hash: '#/course/C01' },
+  'finnish-education-online-course': { title: 'Finnish Education Online Course | FCEI', desc: 'Study Finnish education principles online. FCEI offers EDUFI-aligned, FINEEC-benchmarked courses for teachers, school leaders and institutions globally.', h1: 'Finnish Education Online Course', schemaType: 'Course', courseCode: 'C01', hash: '#/catalogue' },
+  'fcei-framework': { title: 'FCEI Finnish Teacher Training Development Framework', desc: 'Understand the FCEI Finnish Teacher Training Development Framework: equity, trust, wellbeing, learner agency, structured support and enhancement-led development.', h1: 'FCEI Finnish Teacher Training Development Framework', schemaType: 'Organization', courseCode: null, hash: '#/' },
+  'finnish-formative-assessment': { title: 'Finnish Formative Assessment for Teachers | FCEI', desc: 'Explore Finnish formative assessment, feedback culture and assessment for learning through the FCEI Finnish Teacher Training Development Framework.', h1: 'Finnish Formative Assessment for Teachers', schemaType: 'Course', courseCode: 'C07', hash: '#/course/C07' },
+  'student-wellbeing-teacher-training': { title: 'Student Wellbeing and Joy of Learning Training | FCEI', desc: 'Develop student wellbeing, safe classroom climate and joy of learning through FCEI Finnish-inspired, EDUFI-aligned professional learning.', h1: 'Student Wellbeing and Joy of Learning Training', schemaType: 'Course', courseCode: 'C04', hash: '#/course/C04' },
+  'school-leadership-quality-culture': { title: 'School Leadership and Quality Culture | FCEI', desc: 'Build school leadership, quality culture and enhancement-led development through the FCEI Finnish Teacher Training Development Framework.', h1: 'School Leadership and Quality Culture', schemaType: 'Course', courseCode: 'C09', hash: '#/course/C09' },
+  'tvet-competence-based-learning': { title: 'TVET Competence-Based Learning and Workplace Evidence | FCEI', desc: 'Explore TVET competence-based learning, workplace evidence and practical assessment through the FCEI Finnish Teacher Training Development Framework.', h1: 'TVET Competence-Based Learning and Workplace Evidence', schemaType: 'Course', courseCode: 'C13', hash: '#/course/C13' },
+  'school-improvement-consultancy': { title: 'School Improvement Consultancy | FCEI', desc: 'FCEI school improvement consultancy for institutions seeking Finnish-inspired, EDUFI-aligned and FINEEC-benchmarked professional development implementation.', h1: 'School Improvement Consultancy', schemaType: 'ProfessionalService', courseCode: 'C14', hash: '#/consultancy' },
+  'fcei-certificate-verification': { title: 'FCEI Capstone Certificate Verification', desc: 'Verify FCEI Capstone certificates. Confirm completion of Finnish-inspired, EDUFI-aligned teacher training through the FCEI platform.', h1: 'FCEI Capstone Certificate Verification', schemaType: 'WebPage', courseCode: null, hash: '#/dashboard' }
+};
+
 
 function injectSEO(html, opts) {
   var title = opts.title || 'FCEI | Finnish Creative Education Institute';
@@ -359,6 +374,7 @@ async function multipart(req,boundary){ const buf=await body(req); const raw=buf
 async function api(req,res,pathname,query){
   if(req.method==='OPTIONS') return sendJson(res,200,{});
   try{
+	console.log('API DEBUG:', req.method, pathname);
     if(req.method==='GET' && pathname==='/api/site') return sendJson(res,200,{brand:seed.brand,copy:seed.siteCopy,content:seed.content,courses:seed.courses,products:seed.products,services:seed.services});
     if(req.method==='GET' && pathname==='/api/catalogue') return sendJson(res,200,{courses:seed.courses,products:seed.products,tags:[...new Set(seed.courses.flatMap(c=>c.tags||[]))],copy:seed.siteCopy});
     if(req.method==='GET' && pathname.startsWith('/api/courses/')){ const cid=pathname.split('/')[3]; const c=course(cid); if(!c) return bad(res,'Course not found',404); return sendJson(res,200,{course:c,modules:mods(cid),product:seed.products.find(p=>(p.courseIds||[]).includes(cid)&&p.type==='COURSE')}); }
@@ -610,6 +626,66 @@ async function api(req,res,pathname,query){
       return sendJson(res,200,{booking:rec});
     }
 
+if(pathname.includes('/api/admin/communications')){
+  const b = jsonParse(await body(req));
+
+  if(!b.fullName || !b.email || !b.subject || !b.message){
+    return bad(res,'Full name, email, subject and message are required');
+  }
+
+  const rec = await prisma.communication.create({
+    data:{
+      id: uid('COMM'),
+      type: b.type || 'contact',
+      category: b.category || null,
+      subject: sanitize(b.subject),
+      fullName: sanitize(b.fullName),
+      email: sanitize(b.email),
+      phone: sanitize(b.phone || ''),
+      organisation: sanitize(b.organisation || ''),
+      country: sanitize(b.country || ''),
+      message: sanitize(b.message),
+      priority: b.priority || 'normal',
+      status: 'new',
+      source: 'website',
+      metadata: b.metadata || {}
+    }
+  });
+
+  await prisma.auditLog.create({
+    data:{
+      id: uid('AUD'),
+      action:'COMMUNICATION_CREATED',
+      actorId:null,
+      meta:{
+        communicationId:rec.id,
+        email:rec.email,
+        subject:rec.subject,
+        type:rec.type
+      },
+      at:new Date()
+    }
+  });
+
+  sendMail(
+    NOTIFY_EMAIL,
+    'New Communication: ' + rec.subject,
+    `<h2>New Communication</h2>
+     <p><b>Name:</b> ${rec.fullName}</p>
+     <p><b>Email:</b> ${rec.email}</p>
+     <p><b>Subject:</b> ${rec.subject}</p>
+     <hr>
+     <p>${rec.message}</p>`,
+    'FCEI Platform',
+    'no-reply@fcei.eu'
+  ).catch(()=>{});
+
+  return sendJson(res,201,{
+    success:true,
+    communication:rec
+  });
+}
+
     if(req.method==='POST' && pathname==='/api/cookie-consent'){
       const b=jsonParse(await body(req));
       const rec=await prisma.cookieConsent.create({data:{id:uid('COOKIE'),choice:b.choice||'unknown',ip:req.socket.remoteAddress||'',at:new Date()}});
@@ -633,6 +709,50 @@ async function api(req,res,pathname,query){
       const recentAudit=await prisma.auditLog.findMany({orderBy:{at:'desc'},take:20});
       return sendJson(res,200,{counts,products:seed.products.length,courses:seed.courses.length,modules:seed.modules.length,scormLessons:seed.scormLessons.length,recentAudit});
     }
+
+if(req.method==='GET' && pathname==='/api/admin/communications'){
+  const admin = await requireAdmin(req,res);
+  if(!admin) return;
+
+  const page = Math.max(1, parseInt(query.page || '1'));
+  const limit = Math.min(100, Math.max(1, parseInt(query.limit || '20')));
+  const skip = (page - 1) * limit;
+
+  const where = {};
+
+  if(query.status) where.status = query.status;
+  if(query.priority) where.priority = query.priority;
+  if(query.type) where.type = query.type;
+
+  if(query.search){
+    where.OR = [
+      { fullName: { contains: query.search, mode: 'insensitive' } },
+      { email: { contains: query.search, mode: 'insensitive' } },
+      { subject: { contains: query.search, mode: 'insensitive' } },
+      { organisation: { contains: query.search, mode: 'insensitive' } }
+    ];
+  }
+
+  const [communications, total] = await Promise.all([
+    prisma.communication.findMany({
+      where,
+      orderBy: { createdAt: 'desc' },
+      skip,
+      take: limit
+    }),
+    prisma.communication.count({ where })
+  ]);
+
+  return sendJson(res, 200, {
+    communications,
+    pagination: {
+      page,
+      limit,
+      total,
+      pages: Math.ceil(total / limit)
+    }
+  });
+}
 
     if(req.method==='POST' && pathname==='/api/admin/cms'){
       const admin=await requireAdmin(req,res); if(!admin)return;
@@ -667,11 +787,55 @@ async function api(req,res,pathname,query){
       return sendJson(res,200,{certificate:cert});
     }
 
+
+    // --- SEO Keyword Engine API ---
+    if(req.method==='POST' && pathname==='/api/seo/generate-keywords'){
+      const admin=await requireAdmin(req,res); if(!admin)return;
+      const b=jsonParse(await body(req));
+      if(!b.seedKeyword) return bad(res,'seedKeyword is required');
+      const keywords=generateKeywords({seedKeyword:b.seedKeyword,country:b.country,audience:b.audience,courseCode:b.courseCode,intent:b.intent,contentType:b.contentType});
+      if(b.format==='csv'){
+        const csv=toCsv(keywords);
+        res.writeHead(200,{...SEC_HDRS,'Content-Type':'text/csv','Content-Disposition':'attachment; filename="fcei-keywords.csv"','Access-Control-Allow-Origin':corsOrigin(req)});
+        return res.end(csv);
+      }
+      return sendJson(res,200,{keywords,count:keywords.length,seedKeyword:b.seedKeyword});
+    }
+
+    if(req.method==='POST' && pathname==='/api/seo/create-content-brief'){
+      const admin=await requireAdmin(req,res); if(!admin)return;
+      const b=jsonParse(await body(req));
+      if(!b.keyword) return bad(res,'keyword object is required');
+      const brief=createContentBrief(b.keyword);
+      return sendJson(res,200,{brief});
+    }
+
+    if(req.method==='GET' && pathname==='/api/seo/course-map'){
+      const admin=await requireAdmin(req,res); if(!admin)return;
+      return sendJson(res,200,{courseMap:FCEI_COURSE_MAP,courses:FCEI_COURSES});
+    }
+
+    if(req.method==='GET' && pathname==='/api/seo/content-gaps'){
+      const admin=await requireAdmin(req,res); if(!admin)return;
+      return sendJson(res,200,{contentGaps:FCEI_CONTENT_GAPS});
+    }
+
     return bad(res,'API route not found',404);
   } catch(e){ console.error(e); return bad(res,e.message||'Server error',500); }
 }
 
 const server=http.createServer(async(req,res)=>{ const {path:pathname,query}=parseUrl(req); if(pathname.startsWith('/api/')) return api(req,res,pathname,query); if(pathname.startsWith('/uploads/')) return sendFile(res,path.join(UPLOAD_DIR,path.basename(pathname))); if(pathname.startsWith('/scorm/lessons/')) return sendFile(res,path.join(SCORM_DIR,'lessons',path.basename(pathname))); if(pathname.startsWith('/scorm/template/')) return sendFile(res,path.join(SCORM_DIR,'template',path.basename(pathname))); if(pathname==='/stripe-success'){ const q=parseUrl(req).query; res.writeHead(302,{'Location':'/#/stripe-success?session_id='+(q.session_id||'')+'&order_id='+(q.order_id||'')}); res.end(); return; }
+
+    if(pathname.match(/^\/[a-z]/) && !pathname.includes('/') === false){
+      const slug=pathname.replace(/^\//, '').replace(/\/$/,'');
+      const landing=SEO_LANDING_PAGES[slug];
+      if(landing){
+        const raw=fs.readFileSync(path.join(PUBLIC_DIR,'index.html'),'utf8');
+        const jsonld=landing.schemaType==='Course'&&landing.courseCode?JSON.stringify({"@context":"https://schema.org","@type":"Course","name":landing.h1,"description":landing.desc,"provider":{"@type":"Organization","name":"Finland Creative Education Institute","sameAs":"https://fcei.eu"},"educationalCredentialAwarded":"FCEI Capstone Certificate","courseMode":"online","url":"https://fcei.eu/"+slug}):landing.schemaType==='ProfessionalService'?JSON.stringify({"@context":"https://schema.org","@type":"ProfessionalService","name":"FCEI School Improvement Consultancy","description":landing.desc,"provider":{"@type":"Organization","name":"Finland Creative Education Institute","sameAs":"https://fcei.eu"},"areaServed":"Global"}):ORG_JSONLD;
+        const out=injectSEO(raw,{title:landing.title,desc:landing.desc,ogTitle:landing.title,ogDesc:landing.desc,canonical:'https://fcei.eu/'+slug,jsonld}).replace('</body>','<script>if(!location.hash)location.hash="'+landing.hash+'";<\/script></body>');
+        res.writeHead(200,{'Content-Type':'text/html;charset=utf-8','Cache-Control':'public,max-age=3600'}); res.end(out); return;
+      }
+    }
     if(pathname.startsWith('/courses/')){
       const slug=pathname.replace('/courses/','').replace(/\/$/,'');
       const cid=SEO_DATA[slug];

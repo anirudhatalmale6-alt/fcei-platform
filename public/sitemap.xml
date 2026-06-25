@@ -2,97 +2,159 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fcei.eu</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://fcei.eu/#/catalogue</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fcei.eu/#/tvet</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/#/resources</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://fcei.eu/#/legal</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.5</priority>
   </url>
+  <!-- SEO landing pages -->
+  <url>
+    <loc>https://fcei.eu/finnish-teacher-training-courses</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/finnish-pedagogy-course</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/finnish-education-online-course</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/fcei-framework</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/finnish-formative-assessment</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/student-wellbeing-teacher-training</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/school-leadership-quality-culture</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/tvet-competence-based-learning</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/school-improvement-consultancy</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fcei.eu/fcei-certificate-verification</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Course pages -->
   <url>
     <loc>https://fcei.eu/courses/c01-finnish-education-values-equity-trust-wellbeing-and-joy-of-learning</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c02-learner-agency-and-the-joy-of-learning</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c03-active-learning-play-movement-and-learning-environment-design</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c04-formative-assessment-feedback-and-self-assessment</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c05-early-support-and-the-leave-no-child-behind-classroom-cycle</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c06-mixed-ability-differentiation-with-support-core-extension-routes</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c07-curriculum-adaptation-studio</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c08-phenomenon-based-projects-and-transversal-competence</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c09-teacher-as-researcher-and-classroom-improvement</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c10-leadership-quality-culture-and-institutional-self-evaluation</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c11-sisu-preschool-in-a-box-play-based-early-years-learning</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c12-blended-learning-implementation-and-digital-finnish-teacher-training-development-framework-operations</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c13-tvet-competence-based-learning-and-workplace-evidence</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fcei.eu/courses/c14-fcei-consultancy-workshops-and-institutional-implementation</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

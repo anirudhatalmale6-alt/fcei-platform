@@ -2169,6 +2169,195 @@ window.__FCEI__ = {
   }
 
   /* ---- admin ------------------------------------------------------------- */
+
+  /* ---- admin SEO keyword engine ----------------------------------------- */
+  function pageSeoEngine() {
+    var head = sectionHead('Admin', 'SEO Keyword Discovery Engine',
+      'Generate keyword maps, content briefs and identify content gaps for FCEI.', 'Admin', 'SEO Engine');
+
+    var formHtml =
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">' +
+        '<div><label style="display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--ink-2)">Seed keyword</label>' +
+        '<input id="seo-seed" type="text" placeholder="e.g. Finnish teacher training" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius-s);font-size:.95rem;font-family:var(--body)"></div>' +
+        '<div><label style="display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--ink-2)">Country</label>' +
+        '<input id="seo-country" type="text" value="Global" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius-s);font-size:.95rem;font-family:var(--body)"></div>' +
+      '</div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px">' +
+        '<div><label style="display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--ink-2)">Audience</label>' +
+        '<input id="seo-audience" type="text" value="Teachers; School Leaders; Institutions" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius-s);font-size:.95rem;font-family:var(--body)"></div>' +
+        '<div><label style="display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--ink-2)">Course code (optional)</label>' +
+        '<select id="seo-course" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius-s);font-size:.95rem;font-family:var(--body);background:var(--snow)">' +
+        '<option value="">All courses</option>' +
+        '<option value="C01">C01 Foundations</option><option value="C02">C02 Equity</option>' +
+        '<option value="C03">C03 Trust</option><option value="C04">C04 Wellbeing</option>' +
+        '<option value="C05">C05 Early Support</option><option value="C06">C06 Learner Agency</option>' +
+        '<option value="C07">C07 Assessment</option><option value="C08">C08 PBL</option>' +
+        '<option value="C09">C09 Leadership</option><option value="C10">C10 Digital/AI</option>' +
+        '<option value="C11">C11 Collaboration</option><option value="C12">C12 Evidence</option>' +
+        '<option value="C13">C13 TVET</option><option value="C14">C14 Consultancy</option>' +
+        '</select></div>' +
+        '<div><label style="display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--ink-2)">Search intent</label>' +
+        '<select id="seo-intent" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius-s);font-size:.95rem;font-family:var(--body);background:var(--snow)">' +
+        '<option value="">Auto-detect</option>' +
+        '<option value="informational">Informational</option><option value="commercial">Commercial</option>' +
+        '<option value="transactional">Transactional</option><option value="navigational">Navigational</option>' +
+        '</select></div>' +
+      '</div>' +
+      '<div style="display:flex;gap:12px;margin-bottom:32px">' +
+        '<button id="seo-generate" class="btn primary" style="padding:10px 24px">Generate keywords</button>' +
+        '<button id="seo-csv" class="btn" style="padding:10px 24px;background:var(--mist);border:1px solid var(--line)">Export CSV</button>' +
+        '<button id="seo-map" class="btn" style="padding:10px 24px;background:var(--mist);border:1px solid var(--line)">Course map</button>' +
+        '<button id="seo-gaps" class="btn" style="padding:10px 24px;background:var(--mist);border:1px solid var(--line)">Content gaps</button>' +
+      '</div>';
+
+    var resultsHtml = '<div id="seo-results" style="font-size:.88rem"></div>';
+    var bodyHtml = '<section class="section" style="padding-top:0"><div class="container">' +
+      formHtml + resultsHtml + '</div></section>';
+    mount(head + bodyHtml);
+
+    function seoPost(url, data) {
+      return api('/api' + url, { method: 'POST', body: data }).then(function (r) { return r.data; });
+    }
+    function seoGet(url) {
+      return api('/api' + url).then(function (r) { return r.data; });
+    }
+
+    function getSeedData() {
+      return {
+        seedKeyword: document.getElementById('seo-seed').value.trim(),
+        country: document.getElementById('seo-country').value.trim(),
+        audience: document.getElementById('seo-audience').value.trim(),
+        courseCode: document.getElementById('seo-course').value || undefined,
+        intent: document.getElementById('seo-intent').value || undefined
+      };
+    }
+
+    function renderKeywords(keywords) {
+      if (!keywords || !keywords.length) return '<p style="color:var(--ink-3)">No keywords generated. Try a different seed.</p>';
+      var html = '<h3 style="margin-bottom:12px">' + keywords.length + ' keyword ideas</h3>' +
+        '<div style="overflow-x:auto"><table class="table" style="font-size:.82rem">' +
+        '<thead><tr><th>Keyword</th><th>Type</th><th>Intent</th><th>Score</th><th>Cluster</th><th>Content type</th><th>Slug</th><th>Brief</th></tr></thead><tbody>';
+      keywords.forEach(function (k) {
+        var kwData = encodeURIComponent(JSON.stringify(k));
+        html += '<tr>' +
+          '<td style="font-weight:600;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + esc(k.keyword) + '</td>' +
+          '<td><span style="background:var(--lake-soft);padding:2px 8px;border-radius:4px;font-size:.75rem">' + esc(k.keywordType) + '</span></td>' +
+          '<td>' + esc(k.searchIntent) + '</td>' +
+          '<td><b style="color:' + (k.priorityScore >= 85 ? 'var(--spruce)' : k.priorityScore >= 70 ? 'var(--amber)' : 'var(--ink-3)') + '">' + k.priorityScore + '</b></td>' +
+          '<td style="font-size:.78rem">' + esc(k.cluster) + '</td>' +
+          '<td style="font-size:.78rem">' + esc(k.contentType) + '</td>' +
+          '<td style="font-family:var(--mono);font-size:.72rem;max-width:200px;overflow:hidden;text-overflow:ellipsis">/' + esc(k.suggestedSlug) + '</td>' +
+          '<td><button class="seo-brief-btn" data-kw="' + kwData + '" style="font-size:.72rem;padding:3px 10px;border:1px solid var(--line);border-radius:4px;background:var(--snow);cursor:pointer">Brief</button></td>' +
+          '</tr>';
+      });
+      html += '</tbody></table></div>';
+      return html;
+    }
+
+    function renderBrief(brief) {
+      return '<div style="background:var(--snow);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-top:16px">' +
+        '<h3 style="margin-bottom:12px">Content brief: ' + esc(brief.primaryKeyword) + '</h3>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:.85rem;margin-bottom:16px">' +
+          '<div><b>Slug:</b> /' + esc(brief.pageSlug) + '</div>' +
+          '<div><b>Schema:</b> ' + esc(brief.schemaType) + '</div>' +
+          '<div style="grid-column:span 2"><b>SEO title:</b> ' + esc(brief.seoTitle) + '</div>' +
+          '<div style="grid-column:span 2"><b>Meta desc:</b> ' + esc(brief.metaDescription) + '</div>' +
+        '</div>' +
+        '<div style="margin-bottom:12px"><b>H1:</b> ' + esc(brief.h1) + '</div>' +
+        '<div style="margin-bottom:12px"><b>H2 outline:</b><ul style="margin:6px 0;padding-left:20px">' +
+        brief.h2s.map(function (h) { return '<li>' + esc(h) + '</li>'; }).join('') + '</ul></div>' +
+        '<div style="margin-bottom:12px"><b>FAQ questions:</b><ul style="margin:6px 0;padding-left:20px">' +
+        brief.faqs.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul></div>' +
+        '<div style="margin-bottom:12px"><b>Internal links:</b> ' + brief.internalLinks.map(function (l) { return '<a href="#" style="color:var(--lake);margin-right:12px">' + esc(l) + '</a>'; }).join('') + '</div>' +
+        '<div><b>Draft intro:</b><p style="color:var(--ink-2);font-style:italic;margin-top:6px">' + esc(brief.draftIntro) + '</p></div>' +
+      '</div>';
+    }
+
+    document.getElementById('seo-generate').onclick = function () {
+      var data = getSeedData();
+      if (!data.seedKeyword) { alert('Enter a seed keyword'); return; }
+      document.getElementById('seo-results').innerHTML = '<p style="color:var(--ink-3)">Generating keywords...</p>';
+      seoPost('/seo/generate-keywords', data).then(function (r) {
+        if (r.error) { document.getElementById('seo-results').innerHTML = '<p style="color:var(--rose)">' + esc(r.error) + '</p>'; return; }
+        document.getElementById('seo-results').innerHTML = renderKeywords(r.keywords);
+        document.querySelectorAll('.seo-brief-btn').forEach(function (btn) {
+          btn.onclick = function () {
+            var kw = JSON.parse(decodeURIComponent(btn.getAttribute('data-kw')));
+            seoPost('/seo/create-content-brief', { keyword: kw }).then(function (br) {
+              if (br.error) { alert(br.error); return; }
+              var existing = document.getElementById('seo-brief-panel');
+              if (existing) existing.remove();
+              var panel = document.createElement('div');
+              panel.id = 'seo-brief-panel';
+              panel.innerHTML = renderBrief(br.brief);
+              document.getElementById('seo-results').appendChild(panel);
+            });
+          };
+        });
+      });
+    };
+
+    document.getElementById('seo-csv').onclick = function () {
+      var data = getSeedData();
+      if (!data.seedKeyword) { alert('Enter a seed keyword'); return; }
+      data.format = 'csv';
+      var t = token();
+      var hdrs = { 'Content-Type': 'application/json' };
+      if (t) hdrs['Authorization'] = 'Bearer ' + t;
+      fetch('/api/seo/generate-keywords', {
+        method: 'POST',
+        headers: hdrs,
+        body: JSON.stringify(data)
+      }).then(function (r) { return r.blob(); }).then(function (blob) {
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = 'fcei-keywords.csv'; a.click();
+        URL.revokeObjectURL(url);
+      });
+    };
+
+    document.getElementById('seo-map').onclick = function () {
+      document.getElementById('seo-results').innerHTML = '<p style="color:var(--ink-3)">Loading course map...</p>';
+      seoGet('/seo/course-map').then(function (r) {
+        if (r.error) { document.getElementById('seo-results').innerHTML = '<p style="color:var(--rose)">' + esc(r.error) + '</p>'; return; }
+        var html = '<h3 style="margin-bottom:12px">Priority SEO page map (' + r.courseMap.length + ' pages)</h3>' +
+          '<div style="overflow-x:auto"><table class="table" style="font-size:.82rem">' +
+          '<thead><tr><th>Course</th><th>Slug</th><th>Page type</th><th>Primary keyword</th><th>Schema</th><th>Internal links</th></tr></thead><tbody>';
+        r.courseMap.forEach(function (p) {
+          html += '<tr><td>' + esc(p.code) + '</td>' +
+            '<td style="font-family:var(--mono);font-size:.75rem">/' + esc(p.slug) + '</td>' +
+            '<td><span style="background:var(--mint-soft);padding:2px 8px;border-radius:4px;font-size:.75rem">' + esc(p.pageType) + '</span></td>' +
+            '<td>' + esc(p.primaryKeyword) + '</td>' +
+            '<td>' + esc(p.schemaType) + '</td>' +
+            '<td style="font-size:.75rem">' + p.internalLinks.join(', ') + '</td></tr>';
+        });
+        html += '</tbody></table></div>';
+        document.getElementById('seo-results').innerHTML = html;
+      });
+    };
+
+    document.getElementById('seo-gaps').onclick = function () {
+      document.getElementById('seo-results').innerHTML = '<p style="color:var(--ink-3)">Loading content gaps...</p>';
+      seoGet('/seo/content-gaps').then(function (r) {
+        if (r.error) { document.getElementById('seo-results').innerHTML = '<p style="color:var(--rose)">' + esc(r.error) + '</p>'; return; }
+        var html = '<h3 style="margin-bottom:12px">Content gap analysis (' + r.contentGaps.length + ' gaps)</h3>';
+        r.contentGaps.forEach(function (g) {
+          var priorityColor = g.priority === 'high' ? 'var(--rose)' : g.priority === 'medium' ? 'var(--amber)' : 'var(--ink-3)';
+          html += '<div style="background:var(--snow);border:1px solid var(--line);border-radius:var(--radius-s);padding:16px 20px;margin-bottom:12px">' +
+            '<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">' +
+              '<b>' + esc(g.topic) + '</b>' +
+              '<span style="background:' + priorityColor + ';color:#fff;padding:2px 10px;border-radius:4px;font-size:.72rem;text-transform:uppercase">' + esc(g.priority) + '</span>' +
+              '<span style="background:var(--lake-soft);padding:2px 10px;border-radius:4px;font-size:.72rem">' + esc(g.recommendedAction) + '</span>' +
+            '</div>' +
+            '<p style="margin:0;font-size:.85rem;color:var(--ink-2)">' + esc(g.reason) + '</p>' +
+            '<p style="margin:8px 0 0;font-family:var(--mono);font-size:.75rem;color:var(--ink-3)">Target: /' + esc(g.targetSlug) + '</p>' +
+          '</div>';
+        });
+        document.getElementById('seo-results').innerHTML = html;
+      });
+    };
+  }
+
   function pageAdmin() {
     loadSite().then(function (s) {
       var counts = {
@@ -2194,6 +2383,7 @@ window.__FCEI__ = {
         '<tbody>' + rows + '</tbody></table>' +
         (LIVE ? '' : '<div class="notice info" style="margin-top:22px"><span class="ni">i</span><div>Admin reporting, CMS editing and Stripe product sync run against the API in the live platform.</div></div>') +
       '</div></section>';
+      body += '<div style="margin-top:22px"><a href="#/admin/seo" class="btn primary" style="padding:10px 24px">SEO Keyword Engine</a></div>';
       mount(head + body);
     });
   }
@@ -2492,6 +2682,7 @@ window.__FCEI__ = {
     [/^#\/legal$/, function () { pageLegal(); }],
     [/^#\/stripe-success/, function () { pageStripeSuccess(); }],
     [/^#\/certificate\/(.+)$/, function (m) { pageCertificate(m[1]); }],
+    [/^#\/admin\/seo$/, function () { pageSeoEngine(); }],
     [/^#\/admin$/, function () { pageAdmin(); }]
   ];
   function route() {
