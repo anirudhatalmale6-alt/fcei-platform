@@ -1016,7 +1016,7 @@ window.__FCEI__ = {
     ]);
     var col3 = footCol('Institute', [
       ['#/booking', 'Request a demo'], ['#/dashboard', 'Learner dashboard'],
-      ['#/admin', 'Admin overview'], ['#/legal', 'Legal & compliance']
+      ['#/legal', 'Legal & compliance']
     ]);
     var col4 = footCol('Standards', [
       ['#/legal', 'Accreditation disclaimer'], ['#/legal', 'Privacy policy'],
@@ -2202,11 +2202,36 @@ window.__FCEI__ = {
           '<span class="linklike legal-toggle" data-idx="' + idx + '" style="font-size:.85rem;cursor:pointer">Read policy ' + svg('arrow') + '</span></div>';
       }).join('');
       var head = sectionHead('Compliance', l.title || 'Legal and Compliance', l.intro || '', 'Home', 'Legal');
+      var complaintsForm = '<div style="margin-top:40px;border-top:1px solid var(--line);padding-top:36px">' +
+        '<span class="eyebrow">COMPLAINTS</span>' +
+        '<h2 style="margin:8px 0 6px">Submit a Complaint</h2>' +
+        '<p class="lead" style="max-width:62ch">If you have a complaint about the FCEI platform, courses or services, please use the form below or email us directly at <a href="mailto:complaints@fcei.eu" style="color:var(--lake);font-weight:600">complaints@fcei.eu</a>.</p>' +
+        '<div class="card" style="margin-top:20px;max-width:680px">' +
+          '<div class="form-col">' +
+            '<label class="muted" style="font-size:.8rem">Your name<input id="comp-name" type="text" style="margin-top:6px"></label>' +
+            '<label class="muted" style="font-size:.8rem">Your email<input id="comp-email" type="email" style="margin-top:6px"></label>' +
+            '<label class="muted" style="font-size:.8rem">Subject' +
+              '<select id="comp-subject" class="txt-in" style="margin-top:6px">' +
+                '<option>Course content or quality</option>' +
+                '<option>Platform access or technical issue</option>' +
+                '<option>Payment or refund</option>' +
+                '<option>Data protection or privacy</option>' +
+                '<option>Certificate or assessment</option>' +
+                '<option>Staff conduct</option>' +
+                '<option>Other</option>' +
+              '</select></label>' +
+            '<label class="muted" style="font-size:.8rem">Your complaint<textarea id="comp-message" rows="5" style="margin-top:6px" placeholder="Please describe your complaint in detail..."></textarea></label>' +
+          '</div>' +
+          '<button class="btn primary block" style="margin-top:16px" id="comp-submit">Submit complaint</button>' +
+          '<div id="comp-msg" style="margin-top:12px"></div>' +
+          '<p class="muted" style="font-size:.78rem;margin-top:14px">We will acknowledge your complaint within 2 business days and aim to provide a full response within 10 business days. You can also email us directly at <a href="mailto:complaints@fcei.eu" style="color:var(--lake)">complaints@fcei.eu</a>.</p>' +
+        '</div></div>';
       var body = '<section class="section" style="padding-top:0"><div class="container">' +
         '<div class="legal-grid">' + items + '</div>' +
         '<div class="notice warn" style="margin-top:28px"><span class="ni">!</span><div>' + esc(l.note || '') + '</div></div>' +
         (l.questionsTitle ? '<div class="card" style="margin-top:20px"><h3>' + esc(l.questionsTitle) + '</h3>' +
           '<p class="muted" style="margin-top:8px">' + esc(l.questionsBody || '') + '</p></div>' : '') +
+        complaintsForm +
       '</div></section>';
       mount(head + body);
       $all('.legal-toggle').forEach(function(btn) {
@@ -2222,6 +2247,34 @@ window.__FCEI__ = {
           }
         });
       });
+      var compBtn = document.getElementById('comp-submit');
+      if (compBtn) {
+        compBtn.onclick = function () {
+          var name = document.getElementById('comp-name').value.trim();
+          var email = document.getElementById('comp-email').value.trim();
+          var subject = document.getElementById('comp-subject').value;
+          var message = document.getElementById('comp-message').value.trim();
+          var msgEl = document.getElementById('comp-msg');
+          if (!name || !email || !message) {
+            msgEl.innerHTML = '<span style="color:var(--rose)">Please fill in all fields.</span>';
+            return;
+          }
+          compBtn.disabled = true;
+          compBtn.textContent = 'Submitting...';
+          api('/api/bookings', { method: 'POST', body: { name: name, email: email, service: 'Complaint: ' + subject, message: message, type: 'complaint' } }).then(function (r) {
+            if (r.ok) {
+              msgEl.innerHTML = '<span style="color:var(--spruce);font-weight:600">Thank you. Your complaint has been received. We will acknowledge it within 2 business days.</span>';
+              document.getElementById('comp-name').value = '';
+              document.getElementById('comp-email').value = '';
+              document.getElementById('comp-message').value = '';
+            } else {
+              msgEl.innerHTML = '<span style="color:var(--rose)">There was an error submitting your complaint. Please email complaints@fcei.eu directly.</span>';
+            }
+            compBtn.disabled = false;
+            compBtn.textContent = 'Submit complaint';
+          });
+        };
+      }
     });
   }
 
