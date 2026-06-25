@@ -2059,8 +2059,10 @@ window.__FCEI__ = {
         return '<div class="card reveal"><span class="chip mint">' + esc(it.tag) + '</span>' +
           '<h3 style="margin:12px 0 8px">' + esc(it.title) + '</h3>' +
           '<p class="muted" style="font-size:.92rem">' + esc(it.desc) + '</p>' +
-          '<div style="margin-top:16px"><button class="btn ghost sm" data-act="dl" data-file="' + esc(it.file) + '">' +
-            svg('doc') + ' Download PDF</button></div></div>';
+          '<div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">' +
+            '<a class="btn ghost sm" href="' + esc(it.file) + '" download style="text-decoration:none">' + svg('doc') + ' PDF</a>' +
+            (it.docx ? '<a class="btn ghost sm" href="' + esc(it.docx) + '" download style="text-decoration:none">' + svg('doc') + ' DOCX</a>' : '') +
+          '</div></div>';
       }).join('');
       var esc8 = (r.escalation || []);
       var escalator = esc8.length ? '<div style="margin-top:8px"><span class="eyebrow">' + esc(r.escalationTitle || 'Escalation and Support Engine') + '</span>' +

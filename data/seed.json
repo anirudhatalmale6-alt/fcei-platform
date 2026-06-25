@@ -18115,6 +18115,48 @@
           "title": "Original Finnish Way Bundle",
           "desc": "Resource pack, diagrams and classroom toolkits from the original Finnish Way concept.",
           "file": "/api/downloads/Original_Finnish_Way_Resources_Toolkits_Diagrams.pdf"
+        },
+        {
+          "tag": "Checklist",
+          "title": "Finnish-Pedagogy Classroom Equity Checklist",
+          "desc": "A practical classroom checklist that helps educators review learner access, participation, support, feedback and evidence through a Finnish-Pedagogy equity lens.",
+          "file": "/downloads/resources/finnish-pedagogy-classroom-equity-checklist.pdf",
+          "docx": "/downloads/resources/finnish-pedagogy-classroom-equity-checklist.docx"
+        },
+        {
+          "tag": "Observation Tool",
+          "title": "Learner Voice and Choice Observation Tool",
+          "desc": "A teacher-friendly rubric for observing whether learners understand goals, make meaningful choices, explain their thinking and reflect on progress.",
+          "file": "/downloads/resources/learner-voice-and-choice-observation-tool.pdf",
+          "docx": "/downloads/resources/learner-voice-and-choice-observation-tool.docx"
+        },
+        {
+          "tag": "Audit",
+          "title": "Wellbeing and Joy of Learning Classroom Audit",
+          "desc": "A short school self-review tool for checking whether classroom routines support belonging, safety, purposeful challenge, participation and learner confidence.",
+          "file": "/downloads/resources/wellbeing-and-joy-of-learning-classroom-audit.pdf",
+          "docx": "/downloads/resources/wellbeing-and-joy-of-learning-classroom-audit.docx"
+        },
+        {
+          "tag": "Framework",
+          "title": "FCEI Transferability Filter",
+          "desc": "A 7-step framework that helps educators adapt Finnish-Pedagogy practice to local contexts responsibly, without copying another system uncritically.",
+          "file": "/downloads/resources/fcei-transferability-filter.pdf",
+          "docx": "/downloads/resources/fcei-transferability-filter.docx"
+        },
+        {
+          "tag": "Template",
+          "title": "VET Workplace Evidence Template",
+          "desc": "A practical template for technical and vocational training providers to collect evidence from observable workplace tasks, industry scenarios and competence demonstrations.",
+          "file": "/downloads/resources/vet-workplace-evidence-template.pdf",
+          "docx": "/downloads/resources/vet-workplace-evidence-template.docx"
+        },
+        {
+          "tag": "Leadership",
+          "title": "School Leadership Quality Culture Map",
+          "desc": "A visual framework that helps school leaders map trust, evidence routines, staff participation, learner experience and enhancement-led improvement into one quality culture cycle.",
+          "file": "/downloads/resources/school-leadership-quality-culture-map.pdf",
+          "docx": "/downloads/resources/school-leadership-quality-culture-map.docx"
         }
       ],
       "escalationTitle": "Escalation and Support Engine",
